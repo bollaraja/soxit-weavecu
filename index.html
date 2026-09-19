@@ -1,0 +1,2371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WeAvecU | Journals, Research, Learning, Mental Health & Technology</title>
+<meta name="description" content="WeAvecU: One unified ecosystem connecting academic journals, psychological research, learning programs, mental health and SOXIT technology consulting.">
+<meta property="og:title" content="WeAvecU | Journals, Research, Learning, Mental Health & Technology">
+<meta property="og:description" content="One unified ecosystem for learning, research, journals, mental health and SOXIT IT consulting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Poppins','Inter','system-ui','sans-serif'] },
+      colors: {
+        navy: '#1B1F3B',
+        indigo: { DEFAULT:'#5B3DF5', 50:'#F1EEFE' },
+        purple: '#7C4DFF',
+        teal: '#00B894',
+        soxit: '#FF8A00',
+        bg: '#F4F6FA',
+        muted: '#667085',
+        borderc: '#E5E7EB'
+      },
+      boxShadow: {
+        card: '0 1px 2px rgba(27,31,59,0.04), 0 8px 24px rgba(27,31,59,0.06)',
+        cardHover: '0 4px 10px rgba(27,31,59,0.06), 0 16px 32px rgba(27,31,59,0.10)'
+      },
+      borderRadius: { xl2: '18px' }
+    }
+  }
+}
+</script>
+<style>
+  :root{
+    --navy:#1B1F3B; --indigo:#5B3DF5; --purple:#7C4DFF; --teal:#00B894;
+    --soxit:#FF8A00; --bg:#F4F6FA; --text:#1B1F3B; --muted:#667085; --border:#E5E7EB;
+  }
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--text); font-family:'Poppins','Inter',system-ui,sans-serif;}
+  .dark body{background:#10132A; color:#F4F6FA;}
+  ::selection{ background:#5B3DF533; }
+  .grad-indigo{ background:linear-gradient(135deg,#5B3DF5,#7C4DFF); }
+  .grad-soxit{ background:linear-gradient(135deg,#FF8A00,#FFB559); }
+  .grad-teal{ background:linear-gradient(135deg,#00B894,#00d0a8); }
+  .card{ background:#fff; border:1px solid var(--border); border-radius:16px; transition: box-shadow .2s ease, transform .2s ease; }
+  .dark .card{ background:#171B39; border-color:#2A2F55; }
+  .card:hover{ box-shadow:0 10px 30px rgba(27,31,59,0.10); transform:translateY(-2px); }
+  .btn{ font-weight:600; font-size:14px; border-radius:10px; padding:11px 20px; transition:.15s ease; display:inline-flex; align-items:center; gap:8px; }
+  .btn-primary{ background:var(--indigo); color:#fff; }
+  .btn-primary:hover{ background:#4a2fe0; }
+  .btn-secondary{ background:#fff; color:var(--navy); border:1px solid var(--border); }
+  .dark .btn-secondary{ background:#171B39; color:#F4F6FA; border-color:#2A2F55; }
+  .btn-secondary:hover{ background:#F4F6FA; }
+  .dark .btn-secondary:hover{ background:#1E2347; }
+  .btn-ghost{ color:var(--indigo); font-weight:600; }
+  .btn-ghost:hover{ text-decoration:underline; }
+  .btn-soxit{ background:var(--soxit); color:#fff; }
+  .btn-soxit:hover{ background:#e67c00; }
+  .chip{ font-size:12px; font-weight:600; padding:4px 10px; border-radius:999px; display:inline-block; }
+  .eyebrow{ font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--indigo); }
+  .navlink{ font-size:14.5px; font-weight:500; color:var(--navy); }
+  .dark .navlink{ color:#F4F6FA; }
+  a, button { cursor:pointer; }
+  .focus-ring:focus-visible{ outline:2px solid var(--indigo); outline-offset:2px; border-radius:6px; }
+  .megamenu{ opacity:0; visibility:hidden; transform:translateY(6px); transition:.16s ease; }
+  .nav-item:hover .megamenu, .nav-item:focus-within .megamenu{ opacity:1; visibility:visible; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+  .container-xl{ max-width:1360px; margin:0 auto; padding-left:24px; padding-right:24px; }
+  .netline{ stroke:#5B3DF533; stroke-width:1.4; }
+  .dark .netline{ stroke:#7C4DFF44; }
+  @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes spin-reverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+  @keyframes ai-pulse { 0%, 100% { transform: scale(1); opacity: 0.85; } 50% { transform: scale(1.06); opacity: 1; } }
+  @keyframes ai-glow { 0%, 100% { filter: drop-shadow(0 0 15px rgba(91,61,245,0.35)); } 50% { filter: drop-shadow(0 0 30px rgba(91,61,245,0.7)); } }
+  @keyframes data-dash { to { stroke-dashoffset: -32; } }
+  .anim-spin-slow { animation: spin-slow 35s linear infinite; transform-origin: 280px 280px; }
+  .anim-spin-reverse { animation: spin-reverse 45s linear infinite; transform-origin: 280px 280px; }
+  .anim-ai-pulse { animation: ai-pulse 4s ease-in-out infinite; transform-origin: 280px 280px; }
+  .anim-ai-glow { animation: ai-glow 3s ease-in-out infinite; }
+  .anim-data-dash { stroke-dasharray: 6 6; animation: data-dash 1.6s linear infinite; }
+  .node-card { transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease; }
+</style>
+</head>
+<body class="antialiased">
+<div id="utilitybar"></div>
+<header id="site-header" class="sticky top-0 z-40"></header>
+<main id="app"></main>
+<footer id="site-footer"></footer>
+<script>
+window.STATE = { dark:false, mobileNav:false, path: location.hash.replace('#','') || '/' };
+</script>
+<script>
+// TODO: Confirm final approved merger logo for WeAvecU + SOXIT.
+// TODO: Confirm official JPAMA title, ISSN and SEO metadata with publisher.
+
+/* ============ VERIFIED DATA ARCHITECTURE ============ */
+const DATA = {
+  organization: {
+    name: 'WeAvecU',
+    tagline: 'Research. Learning. Wellbeing. Technology.',
+    description: 'WeAvecU unites academic publishing, psychological research, clinical mental health services, education and SOXIT technology consulting into one cohesive ecosystem.',
+    experience: '9+ Years of Professional Experience',
+    trained: '100+ Mental Health & Tech Professionals Trained Annually'
+  },
+  journals: [
+    {
+      slug: 'ij-psyoncology',
+      title: 'International Journal of Psycho-Oncology and Positive Psychology',
+      abbreviation: 'IJPOPP',
+      issn: '2584-2439',
+      eissn: null,
+      subject: 'Psychology & Psycho-Oncology',
+      publisher: 'We Avec U Group of Journals',
+      yearStarted: '2023',
+      frequency: 'Quarterly',
+      access: 'Open Access',
+      language: 'English',
+      email: 'editor@ij-psyoncology.in',
+      description: 'A peer-reviewed journal dedicated to advancing psycho-oncology, psychosocial care, positive psychological interventions, patient resilience, and holistic cancer care.',
+      aimsScope: 'Focuses on the psychological, social, emotional, and spiritual dimensions of cancer care. Welcomes empirical research, clinical trials, systematic reviews, and meta-analyses exploring quality of life and coping mechanisms.',
+      currentIssueUrl: '#/journals/ij-psyoncology',
+      archiveUrl: '#/journals/ij-psyoncology',
+      authorGuidelinesUrl: '#/authors',
+      editorialBoardUrl: '#/for-editors',
+      publicationEthicsUrl: '#/for-authors',
+      peerReviewUrl: '#/for-reviewers',
+      callForPapersUrl: '#/submit?journal=ij-psyoncology'
+    },
+    {
+      slug: 'ijcogspirituality',
+      title: 'International Journal of Spirituality and Cognition',
+      abbreviation: 'IJSC',
+      issn: '2584-2315',
+      eissn: null,
+      subject: 'Cognitive Science & Psychology',
+      publisher: 'We Avec U Group of Journals',
+      yearStarted: '2023',
+      frequency: 'Quarterly',
+      access: 'Open Access',
+      language: 'English',
+      email: 'editor@ijcogspirituality.co.in',
+      description: 'An international academic journal exploring the nexus of spiritual traditions, mindfulness practices, neurocognitive mechanisms, and psychological flourishing.',
+      aimsScope: 'Publishes interdisciplinary research bridging contemplative practices, neural correlates of consciousness, cognitive psychology, and holistic wellbeing interventions.',
+      currentIssueUrl: '#/journals/ijcogspirituality',
+      archiveUrl: '#/journals/ijcogspirituality',
+      authorGuidelinesUrl: '#/authors',
+      editorialBoardUrl: '#/for-editors',
+      publicationEthicsUrl: '#/for-authors',
+      peerReviewUrl: '#/for-reviewers',
+      callForPapersUrl: '#/submit?journal=ijcogspirituality'
+    },
+    {
+      slug: 'jpama',
+      title: 'The Journal of Personality and Mental Abilities',
+      abbreviation: 'JPAMA',
+      issn: '3048-8184',
+      eissn: null,
+      subject: 'Personality & Psychological Assessment',
+      publisher: 'We Avec U Group of Journals',
+      yearStarted: '2024',
+      frequency: 'Quarterly',
+      access: 'Open Access',
+      language: 'English',
+      email: 'editor@jpama.co.in',
+      description: 'Peer-reviewed journal publishing empirical, theoretical, and methodological advances in personality psychology, cognitive capabilities, and individual differences.',
+      aimsScope: 'Focuses on personality structure, trait development, cognitive assessment, psychometric validation, and intelligence metrics in diverse populations.',
+      currentIssueUrl: '#/journals/jpama',
+      archiveUrl: '#/journals/jpama',
+      authorGuidelinesUrl: '#/authors',
+      editorialBoardUrl: '#/for-editors',
+      publicationEthicsUrl: '#/for-authors',
+      peerReviewUrl: '#/for-reviewers',
+      callForPapersUrl: '#/submit?journal=jpama'
+    },
+    {
+      slug: 'pjmai',
+      title: 'The Psychological Journal of Modern Assessment and Intervention',
+      abbreviation: 'PJMAI',
+      issn: '3048-8214',
+      eissn: null,
+      subject: 'Assessment & Clinical Intervention',
+      publisher: 'We Avec U Group of Journals',
+      yearStarted: '2024',
+      frequency: 'Quarterly',
+      access: 'Open Access',
+      language: 'English',
+      email: 'editor@pjmai.in',
+      description: 'Dedicated to modern diagnostic testing, standardized psychological measurement, and innovative therapeutic interventions across clinical and educational contexts.',
+      aimsScope: 'Publishes original investigations on diagnostic accuracy, psychological batteries, behavioral interventions, psychotherapy outcomes, and psycho-educational tools.',
+      currentIssueUrl: '#/journals/pjmai',
+      archiveUrl: '#/journals/pjmai',
+      authorGuidelinesUrl: '#/authors',
+      editorialBoardUrl: '#/for-editors',
+      publicationEthicsUrl: '#/for-authors',
+      peerReviewUrl: '#/for-reviewers',
+      callForPapersUrl: '#/submit?journal=pjmai'
+    },
+    {
+      slug: 'indian-psychological-assessment',
+      title: 'The Indian Journal of Psychological Assessment',
+      abbreviation: 'IJPA',
+      issn: '2584-3518',
+      eissn: null,
+      subject: 'Psychometrics & Assessment',
+      publisher: 'We Avec U Foundation',
+      yearStarted: '2023',
+      frequency: 'Quarterly',
+      access: 'Open Access',
+      language: 'English',
+      email: 'editor@indianpsychologicalassessment.com',
+      description: 'An open-access peer-reviewed platform for psychometric scale construction, test standardization, and indigenous psychological assessment in Indian and global contexts.',
+      aimsScope: 'Encourages valid, reliable measurement tools, cross-cultural test adaptations, and standardized clinical scales suitable for diverse demographic populations.',
+      currentIssueUrl: '#/journals/indian-psychological-assessment',
+      archiveUrl: '#/journals/indian-psychological-assessment',
+      authorGuidelinesUrl: '#/authors',
+      editorialBoardUrl: '#/for-editors',
+      publicationEthicsUrl: '#/for-authors',
+      peerReviewUrl: '#/for-reviewers',
+      callForPapersUrl: '#/submit?journal=indian-psychological-assessment'
+    },
+    {
+      slug: 'media-medley',
+      title: 'Media Medley – A Journal of Mass Communication & Media Research',
+      abbreviation: 'MM',
+      issn: '2584-1770',
+      eissn: null,
+      subject: 'Mass Communication & Media Research',
+      publisher: 'We Avec U Group of Journals',
+      yearStarted: '2023',
+      frequency: 'Quarterly',
+      access: 'Open Access',
+      language: 'English',
+      email: 'editor@mediamedleyresearch.in',
+      description: 'Peer-reviewed journal publishing empirical research, critical analyses, and qualitative studies in mass communication, digital media trends, journalism, and cultural studies.',
+      aimsScope: 'Encompasses digital journalism, media sociology, broadcast media, political communication, audience analysis, and media ethics.',
+      currentIssueUrl: '#/journals/media-medley',
+      archiveUrl: '#/journals/media-medley',
+      authorGuidelinesUrl: '#/authors',
+      editorialBoardUrl: '#/for-editors',
+      publicationEthicsUrl: '#/for-authors',
+      peerReviewUrl: '#/for-reviewers',
+      callForPapersUrl: '#/submit?journal=media-medley'
+    },
+    {
+      slug: 'ijpor',
+      title: 'International Journal of Positive Organisational Research',
+      abbreviation: 'IJPOR',
+      issn: '3048-9776',
+      eissn: null,
+      subject: 'Organizational Psychology',
+      publisher: 'We Avec U Group of Journals',
+      yearStarted: '2024',
+      frequency: 'Quarterly',
+      access: 'Open Access',
+      language: 'English',
+      email: 'editor@ijpor.co.in',
+      description: 'An international academic journal exploring positive organizational scholarship, employee flourishing, leadership efficacy, and supportive workplace environments.',
+      aimsScope: 'Publishes articles on organizational behavior, leadership resilience, workplace wellness frameworks, employee motivation, and human resource development.',
+      currentIssueUrl: '#/journals/ijpor',
+      archiveUrl: '#/journals/ijpor',
+      authorGuidelinesUrl: '#/authors',
+      editorialBoardUrl: '#/for-editors',
+      publicationEthicsUrl: '#/for-authors',
+      peerReviewUrl: '#/for-reviewers',
+      callForPapersUrl: '#/submit?journal=ijpor'
+    },
+    {
+      slug: 'sanchar-sutra',
+      title: 'Sanchar Sutra – A Journal of Mass Communication & Media Research',
+      abbreviation: 'SS',
+      issn: '2584-1769',
+      eissn: null,
+      subject: 'Mass Communication & Media Research',
+      publisher: 'We Avec U Group of Journals',
+      yearStarted: '2023',
+      frequency: 'Quarterly',
+      access: 'Open Access',
+      language: 'English',
+      email: 'editor@sancharsutraresearch.in',
+      description: 'A scholarly open-access research journal investigating media communication theories, journalism ethics, digital broadcasting, and societal narratives.',
+      aimsScope: 'Dedicated to fostering rigorous academic dialogue on mass communication, social media dynamics, public relations, and informational ecosystems.',
+      currentIssueUrl: '#/journals/sanchar-sutra',
+      archiveUrl: '#/journals/sanchar-sutra',
+      authorGuidelinesUrl: '#/authors',
+      editorialBoardUrl: '#/for-editors',
+      publicationEthicsUrl: '#/for-authors',
+      peerReviewUrl: '#/for-reviewers',
+      callForPapersUrl: '#/submit?journal=sanchar-sutra'
+    }
+  ],
+  programs: [
+    {
+      slug: 'foundations-in-research-and-statistics',
+      title: 'Foundations in Research and Statistics',
+      category: 'Research & Statistics',
+      duration: '3 months',
+      deliveryMode: 'Online (Weekend sessions)',
+      description: 'Core methodological and statistical training covering research design, quantitative data analysis, SPSS applications, hypothesis testing, and academic manuscript writing.',
+      eligibility: 'Open to students, researchers, academicians, and practitioners in social sciences, psychology, and healthcare.',
+      curriculum: ['Research Philosophy & Design','Qualitative & Quantitative Approaches','Descriptive & Inferential Statistics','Data Handling & SPSS','Writing & Publishing Academic Papers'],
+      certification: 'Certificate in Research & Statistics by WeAvecU'
+    },
+    {
+      slug: 'mental-health-first-aid',
+      title: 'Mental Health First Aid',
+      category: 'Mental Health & Wellness',
+      duration: '3 months',
+      deliveryMode: 'Online via Google Meet',
+      description: 'Practical training structured around the RAPID model to identify signs of psychological distress, provide empathetic crisis support, and facilitate professional referrals.',
+      eligibility: 'Ideal for counselors, social workers, HR professionals, educators, and community caregivers.',
+      curriculum: ['Understanding Psychological Distress','RAPID Crisis Assessment Model','De-escalation & Active Listening','Trauma & Suicide Risk Identification','Referral Systems & Ethics'],
+      certification: 'Certified Mental Health First Aider by WeAvecU'
+    },
+    {
+      slug: 'expressive-art-therapy',
+      title: 'Expressive Art Therapy',
+      category: 'Expressive Arts',
+      duration: '3 months (200 Hours: 160 Training + 40 Internship)',
+      deliveryMode: 'Online & Practical Supervised Internship',
+      description: 'Comprehensive experiential training integrating visual art, movement, music, drama, and expressive modalities as healing tools in psychological practice.',
+      eligibility: 'Psychology graduates, counselors, mental health workers, special educators, and expressive arts enthusiasts.',
+      curriculum: ['Foundations of Expressive Arts','Visual & Tactile Modalities','Movement & Body-Centred Therapy','Drama & Narrative Techniques','Clinical Case Conceptualization & Internship'],
+      certification: 'Certified Expressive Art Therapy Practitioner by WeAvecU'
+    },
+    {
+      slug: 'child-development-and-parenting',
+      title: 'Child Development and Parenting',
+      category: 'Child Psychology',
+      duration: 'Structured Cohort Program',
+      deliveryMode: 'Online Interactive',
+      description: 'In-depth exploration of developmental milestones, socio-emotional learning, behavioral management, and evidence-based positive parenting frameworks.',
+      eligibility: 'Parents, teachers, counselors, and pediatric caregivers.',
+      curriculum: ['Developmental Stages & Neurobiology','Emotional Regulation in Children','Positive Discipline & Communication','Addressing Behavioral Challenges','Parent-Child Relationship Building'],
+      certification: 'Certificate in Child Development & Parenting Guidance'
+    },
+    {
+      slug: 'creative-expressive-modalities',
+      title: 'Creative Expressive Modalities',
+      category: 'Expressive Arts',
+      duration: 'Specialized Workshop Track',
+      deliveryMode: 'Online Workshop & Experiential Labs',
+      description: 'Practical application of creative expressive modalities in clinical, educational, and counseling frameworks to support emotional processing and resilience.',
+      eligibility: 'Practicing counselors, mental health professionals, and educators.',
+      curriculum: ['Therapeutic Play & Sandtray Basics','Creative Writing & Poetry in Therapy','Sound & Rhythm in Healing','Integrating Modalities in Clinical Settings'],
+      certification: 'Certificate of Competence in Expressive Modalities'
+    },
+    {
+      slug: 'cyberpsychology-and-ai',
+      title: 'Cyberpsychology & AI',
+      category: 'Psychology & Technology',
+      duration: 'Advanced Modular Course',
+      deliveryMode: 'Online Interactive',
+      description: 'A study of digital behavior, human-computer interaction, online identity formation, virtual counseling dynamics, and the psychological dimensions of AI.',
+      eligibility: 'Psychologists, technologists, educators, and social researchers.',
+      curriculum: ['Digital Psychology & Online Behavior','Social Media & Cognitive Health','Virtual Therapy & Telepsychology','AI in Behavioral Science & Ethics'],
+      certification: 'Executive Certificate in Cyberpsychology & AI'
+    },
+    {
+      slug: 'grief-and-trauma-care',
+      title: 'Grief & Trauma Care',
+      category: 'Mental Health & Wellness',
+      duration: 'Clinical Intensive Track',
+      deliveryMode: 'Online Live Sessions',
+      description: 'Trauma-informed care protocols, grief counseling models, crisis intervention methods, and resilience-building interventions for complex loss.',
+      eligibility: 'Counselors, clinical psychologists, social workers, and palliative caregivers.',
+      curriculum: ['Neurobiology of Trauma','Models of Bereavement & Complicated Grief','Trauma-Informed Assessment','Somatic & Cognitive Interventions','Self-Care for Clinicians'],
+      certification: 'Trauma & Grief Support Certification by WeAvecU'
+    },
+    {
+      slug: 'core-concepts-in-psychology',
+      title: 'Diploma Course in Core Concepts in Psychology',
+      category: 'Psychology',
+      duration: 'Comprehensive Diploma Track',
+      deliveryMode: 'Online Curriculum',
+      description: 'Rigorous foundational diploma covering cognitive psychology, developmental milestones, social psychology, abnormal psychology, and physiological bases of behavior.',
+      eligibility: 'Anyone seeking a solid grounding in academic and applied psychology.',
+      curriculum: ['Introduction to Behavioral Science','Cognition, Memory & Perception','Lifespan Developmental Psychology','Psychopathology & Diagnostic Systems','Introduction to Counseling Psychology'],
+      certification: 'Diploma in Core Concepts in Psychology'
+    },
+    {
+      slug: 'mindful-mentors',
+      title: 'Mindful Mentors: Comprehensive Course in Child Psychology for Parents and Caregivers',
+      category: 'Child Psychology',
+      duration: 'Specialized Mentorship Program',
+      deliveryMode: 'Online Coaching & Cohort Discussions',
+      description: 'Practical coaching for parents and educators to build emotional attunement, mindful communication, and constructive guidance for developing children.',
+      eligibility: 'Parents, guardians, educators, and school counselors.',
+      curriculum: ['Mindful Presence in Parenting','Understanding Emotional Outbursts','Cognitive Stimulation Activities','Fostering Resilience & Empathy'],
+      certification: 'Mindful Mentor Certificate by WeAvecU'
+    },
+    {
+      slug: 'integrated-expressive-arts-psychology-child',
+      title: 'Integrated Course in Expressive Arts, Psychology and Child Development',
+      category: 'Integrated Sciences',
+      duration: 'Multi-Disciplinary Program',
+      deliveryMode: 'Online & Practical Projects',
+      description: 'An interdisciplinary curriculum combining expressive arts therapies, developmental psychology, and child behavioral interventions into one holistic framework.',
+      eligibility: 'Child psychologists, educators, pediatric therapists, and creative arts facilitators.',
+      curriculum: ['Integrated Child Assessment','Creative Arts for Child Emotional Expression','Behavioral Guidance Through Art','Case Studies & Project Work'],
+      certification: 'Integrated Practitioner Certificate by WeAvecU'
+    }
+  ],
+  learningPaths: [
+    {
+      slug: 'psychology-counseling-track',
+      title: 'Psychology & Counseling Foundations Track',
+      level: 'Foundational to Applied',
+      courses: ['Diploma Course in Core Concepts in Psychology', 'Mental Health First Aid', 'Foundations in Research and Statistics']
+    },
+    {
+      slug: 'expressive-arts-therapy-track',
+      title: 'Expressive Arts & Integrative Therapy Track',
+      level: 'Experiential & Professional',
+      courses: ['Creative Expressive Modalities', 'Expressive Art Therapy', 'Integrated Course in Expressive Arts, Psychology and Child Development']
+    },
+    {
+      slug: 'child-psychology-parenting-track',
+      title: 'Child Psychology & Developmental Guidance Track',
+      level: 'Caregiver & Educator Track',
+      courses: ['Child Development and Parenting', 'Mindful Mentors: Comprehensive Course in Child Psychology', 'Mental Health First Aid']
+    }
+  ],
+  mentalHealthServices: [
+    {
+      slug: 'counselling-services',
+      title: 'Counselling Services',
+      icon: 'heart-handshake',
+      desc: 'Confidential individual, couples, family, and adolescent counseling sessions led by qualified mental health practitioners for anxiety, mood concerns, relationship guidance, and personal growth.'
+    },
+    {
+      slug: 'training-cum-internship',
+      title: 'Training-Cum-Internship',
+      icon: 'graduation-cap',
+      desc: 'Structured clinical and counseling internships for psychology students, offering real-world case discussions, ethical practice guidance, and supervised practical assignments.'
+    },
+    {
+      slug: 'supervision-mentorship',
+      title: 'Supervision & Mentorship',
+      icon: 'user-check',
+      desc: 'Professional case supervision and continuous mentorship for practicing counselors, psychologists, and interns to uphold high ethical and clinical standards.'
+    },
+    {
+      slug: 'expressive-art-therapy-services',
+      title: 'Expressive Art Therapy',
+      icon: 'palette',
+      desc: 'Evidence-based creative interventions using painting, clay, music, movement, and narrative expression to facilitate deep emotional healing and psychological integration.'
+    },
+    {
+      slug: 'career-counselling',
+      title: 'Career Counselling',
+      icon: 'compass',
+      desc: 'Scientific career assessment batteries, aptitude evaluation, interest profiling, and personalized counseling to guide educational and professional journeys.'
+    },
+    {
+      slug: 'corporate-wellness',
+      title: 'Corporate Wellness',
+      icon: 'building-2',
+      desc: 'Tailored workplace wellbeing workshops, executive stress management, employee assistance programs, and mental health resilience training for corporate teams.'
+    },
+    {
+      slug: 'certification-programs',
+      title: 'Certification Programs',
+      icon: 'award',
+      desc: 'Specialized professional training and skill certification programs in applied psychology, expressive therapies, and crisis support.'
+    }
+  ],
+  soxitServices: [
+    {
+      slug: 'it-consulting',
+      title: 'IT Consulting & Digital Strategy',
+      icon: 'monitor-cog',
+      desc: 'Strategic technology advisory, enterprise architecture evaluation, legacy modernization, and IT operating model enhancements.',
+      capabilities: ['Digital & Technology Transformation','Cloud Migration Roadmaps','IT Operating Model Optimization','Enterprise Architecture Assessment','Vendor & Tech Stack Evaluation']
+    },
+    {
+      slug: 'web-development',
+      title: 'Web & Enterprise Portal Development',
+      icon: 'globe',
+      desc: 'High-performance web applications, responsive institutional portals, secure content management systems, and academic publishing gateways.',
+      capabilities: ['Institutional & Enterprise Portals','High-Throughput Web Applications','Headless CMS & Custom Editorial Workflows','Accessibility (WCAG AA) & SEO Optimization','API-First Integrations']
+    },
+    {
+      slug: 'software-development',
+      title: 'Custom Software & Cloud Systems',
+      icon: 'code-2',
+      desc: 'Custom software engineering designed to streamline organizational workflows, data processing, reporting, and operational systems.',
+      capabilities: ['Custom Enterprise ERP/CRM Engines','Microservices & Event-Driven Architecture','Secure Multi-Tenant Cloud Platforms','Database Design & Query Optimization','Automated Testing & Continuous Delivery']
+    },
+    {
+      slug: 'application-development',
+      title: 'Application Development & Modernization',
+      icon: 'smartphone',
+      desc: 'Cross-platform mobile and web application design and development built with modern architectures, high reliability, and intuitive UI/UX.',
+      capabilities: ['Cross-Platform Mobile Apps (iOS & Android)','Progressive Web Applications (PWA)','Legacy App Modernization & Refactoring','User-Centric UI/UX Design Systems','Offline-First Architecture']
+    },
+    {
+      slug: 'computer-networking',
+      title: 'Computer Networking & Infrastructure',
+      icon: 'network',
+      desc: 'Secure enterprise network infrastructure design, local and wide area network setup, network security monitoring, and hardware connectivity solutions.',
+      capabilities: ['Enterprise LAN/WAN Architecture','Zero Trust Network Access (ZTNA)','Network Monitoring & Telemetry','Firewall, VPN & Access Management','Hybrid Cloud & On-Premise Connectivity']
+    },
+    {
+      slug: 'data-ai-enablement',
+      title: 'Data, AI & Intelligence Enablement',
+      icon: 'sparkles',
+      desc: 'Establishing unified data foundations, business intelligence pipelines, and responsible AI frameworks to convert information into decision-making power.',
+      capabilities: ['Data Pipeline & ETL Engineering','Business Intelligence Dashboards','AI & Machine Learning Model Integration','Responsible AI Governance Frameworks','Real-Time Analytics Infrastructure']
+    },
+    {
+      slug: 'cybersecurity-trust',
+      title: 'Cybersecurity & Trust Architecture',
+      icon: 'shield-check',
+      desc: 'Comprehensive information security, vulnerability assessment, regulatory compliance, and data privacy safeguards.',
+      capabilities: ['Vulnerability Assessment & Penetration Testing','Security Compliance & Audit Readiness','Data Encryption & Key Management','Threat Detection & Incident Response','Employee Cybersecurity Awareness']
+    }
+  ],
+  soxitAcademia: [
+    {
+      slug: 'iskill-virtual-labs',
+      title: 'iSkill Virtual Innovation Labs',
+      icon: 'flask-conical',
+      category: 'Virtual Simulation & Hands-On',
+      duration: '12 Weeks / Self-Paced Cohorts',
+      level: 'All Levels',
+      desc: 'Dynamic and immersive hands-on practical experience through virtual platforms, interactive simulation sandbox labs, and real-world system modeling.',
+      curriculum: [
+        'Virtual Cloud Environments & Sandboxes',
+        'Simulated Production Debugging & Incident Response',
+        'Interactive Architecture Walkthroughs',
+        'Hands-on API, Database & Network Sandboxes',
+        'Automated Real-Time Feedback & Verification'
+      ],
+      targetAudience: 'Students, career changers, and tech practitioners seeking verified hands-on skills in trending technologies.',
+      certification: 'Certified iSkill Practical Practitioner by SOXIT Academia'
+    },
+    {
+      slug: 'on-the-job-training-internships',
+      title: 'On-the-Job Training & Tech Internships',
+      icon: 'briefcase',
+      category: 'Practical Industry Experience',
+      duration: '3 to 6 Months',
+      level: 'Intermediate to Advanced',
+      desc: 'Structured industry internships embedded directly into real production projects, agile sprint cycles, code reviews, and enterprise client workflows.',
+      curriculum: [
+        'Agile Sprint Planning & Daily Standups',
+        'Git Collaboration, Code Reviews & CI/CD Pipelines',
+        'Production Codebase Contributions',
+        'Quality Assurance, Automated Testing & Deployment',
+        'Direct Mentorship from Senior Enterprise Engineers'
+      ],
+      targetAudience: 'Aspiring software engineers, developers, and final-year technical graduates.',
+      certification: 'SOXIT Professional Industry Internship Certificate'
+    },
+    {
+      slug: 'ai-forge-intelligence',
+      title: 'AI Forge & Applied Intelligence Accelerator',
+      icon: 'sparkles',
+      category: 'Artificial Intelligence & Machine Learning',
+      duration: '12-Week Intensive Program',
+      level: 'Advanced',
+      desc: 'Specialized program in modern generative AI, LLM fine-tuning, Agentic workflows, vector databases, RAG architecture, and responsible AI governance.',
+      curriculum: [
+        'Generative AI & LLM Core Architectures',
+        'Vector Embeddings & Retrieval-Augmented Generation (RAG)',
+        'Autonomous Agentic Workflows & Function Calling',
+        'Prompt Optimization & Model Evaluation Benchmarks',
+        'Enterprise AI Ethics, Guardrails & Security Compliance'
+      ],
+      targetAudience: 'AI practitioners, data engineers, software developers, and technical leaders.',
+      certification: 'AI Forge Applied Intelligence Specialist Certificate'
+    },
+    {
+      slug: 'interview-prep-career',
+      title: 'Technical Interview Preparation & Career Accelerator',
+      icon: 'target',
+      category: 'Career Acceleration',
+      duration: '6 Weeks Fast-Track',
+      level: 'Career Readiness',
+      desc: 'Comprehensive interview readiness with live system design mock interviews, algorithmic problem-solving drills, portfolio reviews, and tech career coaching.',
+      curriculum: [
+        'Data Structures & Algorithmic Problem Solving',
+        'Large-Scale System Design & Scalability Drills',
+        'Behavioral & Technical Leadership Scenarios',
+        'Live Whiteboard & Code-Pair Simulations',
+        'Resume Refinement & Industry Placement Support'
+      ],
+      targetAudience: 'Candidates preparing for Tier-1 technology and enterprise IT positions.',
+      certification: 'SOXIT Career Readiness & Interview Endorsement'
+    },
+    {
+      slug: 'cloud-devops-mastery',
+      title: 'Cloud Systems & DevOps Engineering',
+      icon: 'cloud',
+      category: 'Cloud & Infrastructure',
+      duration: '10 Weeks',
+      level: 'Intermediate',
+      desc: 'Hands-on training in containerization, Kubernetes orchestration, Infrastructure-as-Code (Terraform), and multi-cloud deployment strategies.',
+      curriculum: [
+        'Docker Containerization & Multi-Stage Builds',
+        'Kubernetes Cluster Architecture & Orchestration',
+        'CI/CD Automation with GitHub Actions & GitLab',
+        'Infrastructure as Code with Terraform',
+        'Cloud Observability, Monitoring & Logging'
+      ],
+      targetAudience: 'DevOps aspirants, system administrators, and cloud engineers.',
+      certification: 'Certified Cloud & DevOps Engineer by SOXIT Academia'
+    },
+    {
+      slug: 'fullstack-software-engineering',
+      title: 'Full-Stack Modern Software Engineering',
+      icon: 'code',
+      category: 'Software Engineering',
+      duration: '16 Weeks Comprehensive',
+      level: 'Foundational to Professional',
+      desc: 'End-to-end full-stack development mastering React, TypeScript, Node.js, relational and NoSQL databases, and microservices architecture.',
+      curriculum: [
+        'Modern TypeScript & Advanced Component Patterns',
+        'Node.js, Express & Microservice Architectures',
+        'PostgreSQL, Prisma & MongoDB Database Systems',
+        'RESTful & GraphQL API Design Principles',
+        'End-to-End Testing & Production Deployment'
+      ],
+      targetAudience: 'Developers seeking comprehensive full-stack engineering proficiency.',
+      certification: 'Full-Stack Software Engineering Diploma by SOXIT Academia'
+    }
+  ],
+  announcements: [
+    {
+      slug: 'call-for-papers-2026',
+      title: 'Call for Papers: Volume 2026 Across All 8 WeAvecU Academic Journals',
+      category: 'Call for Papers',
+      date: 'Quarterly Submissions Open',
+      desc: 'Authors and researchers are invited to submit original empirical research, systematic reviews, and case studies across psychology, cognitive science, assessment, and media research.',
+      url: '#/authors'
+    },
+    {
+      slug: 'internship-batch-admissions',
+      title: 'Admissions Open: Clinical Training-Cum-Internship Batch',
+      category: 'Academic Training',
+      date: 'Enrollment Ongoing',
+      desc: 'Enrolling psychology students and emerging professionals for supervised case studies, psychometric evaluations, and expressive modality workshops.',
+      url: '#/health'
+    },
+    {
+      slug: 'research-statistics-cohort',
+      title: 'Foundations in Research & Statistics — Next Online Batch',
+      category: 'Workshop Cohort',
+      date: 'Weekend Online Sessions',
+      desc: 'Intensive 3-month curriculum covering research methodology, SPSS data analysis, hypothesis testing, and peer-reviewed manuscript preparation.',
+      url: '#/academy/courses/foundations-in-research-and-statistics'
+    }
+  ],
+  researchers: [],
+  conferences: [],
+  media: [],
+  partners: []
+};
+
+const ICON_MAP = {
+  Academy: 'graduation-cap',
+  'Journals & Research': 'book-open',
+  SOXIT: 'briefcase',
+  'SOXIT Academia': 'sparkles',
+  Community: 'users',
+  'Mental Health & Wellness': 'heart-pulse',
+  'Psychology': 'brain',
+  'Child Psychology': 'smile',
+  'Research & Statistics': 'bar-chart-3',
+  'Expressive Arts': 'palette',
+  'Psychology & Technology': 'cpu',
+  'Integrated Sciences': 'layers',
+  'Virtual Simulation & Hands-On': 'flask-conical',
+  'Practical Industry Experience': 'briefcase',
+  'Artificial Intelligence & Machine Learning': 'sparkles',
+  'Career Acceleration': 'target',
+  'Cloud & Infrastructure': 'cloud',
+  'Software Engineering': 'code'
+};
+</script>
+<script>
+/* ============ ICONS HELPER ============ */
+function icon(name, cls){ return `<i data-lucide="${name||'check'}" class="${cls||''}"></i>`; }
+
+/* ============ UTILITY BAR ============ */
+function renderUtilityBar(){
+  return `
+  <div class="hidden md:block bg-navy text-white/80 text-[13px]">
+    <div class="container-xl flex items-center justify-between h-9">
+      <div class="flex items-center gap-5">
+        <a href="#/about" class="hover:text-white focus-ring">About Us</a>
+        <a href="#/about#careers" class="hover:text-white focus-ring">Careers</a>
+        <a href="#/journals" class="hover:text-white focus-ring">Journals Portal</a>
+        <a href="#/soxit" class="hover:text-white focus-ring">SOXIT Consulting</a>
+        <a href="#/about#contact" class="hover:text-white focus-ring">Contact</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-white/60 flex items-center gap-1">${icon('globe','w-3.5 h-3.5')} English</span>
+        <button id="darkToggle" class="hover:text-white focus-ring flex items-center gap-1">${icon('moon','w-3.5 h-3.5')} <span id="darkLabel">Dark</span></button>
+        <a href="#/login" class="hover:text-white focus-ring">Login</a>
+        <a href="#/signup" class="bg-indigo text-white px-3 py-1 rounded-md font-semibold hover:bg-[#4a2fe0] focus-ring">Sign Up</a>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ============ MEGA MENUS ============ */
+function menuCol(title, dot, items, base){
+  return `<div>
+    <p class="flex items-center gap-2 text-[11px] font-bold tracking-wider uppercase text-muted mb-4">
+      <span class="w-1.5 h-1.5 rounded-full ${dot}"></span>${title}
+    </p>
+    <ul class="space-y-0.5 -mx-2.5">
+      ${items.map(i=>{
+        const label = i.label||i;
+        const href = i.href||('#/'+base);
+        return `<li><a href="${href}" class="group flex items-center justify-between text-[14px] text-navy dark:text-white/90 hover:text-indigo hover:bg-bg dark:hover:bg-white/5 rounded-lg px-2.5 py-2 focus-ring">
+          <span>${label}</span>
+          <span class="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all">${icon('arrow-right','w-3.5 h-3.5')}</span>
+        </a></li>`;
+      }).join('')}
+    </ul>
+  </div>`;
+}
+function menuPromo(title, sub, cta, href, grad){
+  return `<div class="rounded-xl2 p-6 text-white flex flex-col justify-between" style="background:${grad}">
+    <div>
+      <p class="font-semibold text-[14.5px] mb-1.5 leading-snug">${title}</p>
+      <p class="text-[12.5px] text-white/85 leading-relaxed">${sub}</p>
+    </div>
+    <a href="${href}" class="mt-5 inline-flex items-center gap-1.5 text-[12.5px] font-semibold bg-white/15 hover:bg-white/25 transition-colors w-fit px-3 py-2 rounded-lg">${cta} ${icon('arrow-right','w-3.5 h-3.5')}</a>
+  </div>`;
+}
+function megaPanel(align, widthCls, colsCls, inner){
+  const alignCls = align==='right' ? 'right-0' : 'left-0';
+  return `<div class="megamenu absolute ${alignCls} top-full pt-3 ${widthCls}">
+    <div class="bg-white dark:bg-[#12152C] border border-borderc dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+      <div class="grid ${colsCls} gap-8 p-8">${inner}</div>
+    </div>
+  </div>`;
+}
+function megaMenus(){
+  return {
+    academy: megaPanel('left','w-[720px]','grid-cols-[1fr_1fr_220px]',
+      menuCol('Discover','bg-indigo',[
+        {label:'All Programs',href:'#/academy/courses'},
+        {label:'Learning Paths',href:'#/academy/learning-paths'},
+        {label:'Certificates',href:'#/academy/certificates'},
+        {label:'Corporate Learning',href:'#/academy/corporate'}
+      ],'academy')+
+      menuCol('Key Domains','bg-indigo',[
+        {label:'Research & Statistics',href:'#/academy/courses'},
+        {label:'Mental Health First Aid',href:'#/academy/courses'},
+        {label:'Expressive Art Therapy',href:'#/academy/courses'},
+        {label:'Child Psychology',href:'#/academy/courses'},
+        {label:'Cyberpsychology & AI',href:'#/academy/courses'}
+      ],'academy/courses')+
+      menuPromo('Learn. Grow. Achieve.','Explore verified certification programs and hands-on courses.','Visit Academy','#/academy','linear-gradient(135deg,#5B3DF5,#7C4DFF)')
+    ),
+    health: megaPanel('left','w-[700px]','grid-cols-[1fr_1fr_220px]',
+      menuCol('Mental Health & Wellbeing','bg-teal',[
+        {label:'Counselling Services',href:'#/health'},
+        {label:'Training-Cum-Internship',href:'#/health'},
+        {label:'Supervision & Mentorship',href:'#/health'},
+        {label:'Expressive Art Therapy',href:'#/health'},
+        {label:'Career Counselling',href:'#/health'}
+      ],'health')+
+      menuCol('Institutional & Corporate','bg-teal',[
+        {label:'Corporate Wellness',href:'#/health'},
+        {label:'Certification Programs',href:'#/health'},
+        {label:'Clinic & Institute Services',href:'#/health'}
+      ],'health')+
+      menuPromo('Evidence-Based Wellbeing','Empathetic, verified mental healthcare, supervision and internship programs.','Explore Services','#/health','linear-gradient(135deg,#00B894,#00d0a8)')
+    ),
+    research: megaPanel('left','w-[720px]','grid-cols-[1fr_1fr_220px]',
+      menuCol('Our 8 Journals','bg-teal',DATA.journals.map(j=>({label:j.abbreviation+' – '+j.title.slice(0,28)+'...',href:'#/journals/'+j.slug})),'journals')+
+      menuCol('Publishing Resources','bg-teal',[
+        {label:'Journal Directory',href:'#/journals'},
+        {label:'Author Guidelines',href:'#/authors'},
+        {label:'Publication Ethics',href:'#/for-authors'},
+        {label:'Peer Review Policy',href:'#/for-reviewers'},
+        {label:'Call for Papers',href:'#/journals'}
+      ],'journals')+
+      menuPromo('8 Peer-Reviewed Journals','Open-access publishing across psychology, psycho-oncology, assessment & media.','Browse Directory','#/journals','linear-gradient(135deg,#00B894,#5B3DF5)')
+    ),
+    soxit: megaPanel('right','w-[720px]','grid-cols-[1fr_1fr_220px]',
+      menuCol('Technology Services','bg-soxit',DATA.soxitServices.map(s=>({label:s.title,href:'#/soxit/services/'+s.slug})),'soxit')+
+      menuCol('Consulting & Solutions','bg-soxit',[
+        {label:'IT Consulting Overview',href:'#/soxit'},
+        {label:'Enroll / Consult with SOXIT',href:'#/soxit/consult'},
+        {label:'Web & Application Dev',href:'#/soxit/services'},
+        {label:'Software Engineering',href:'#/soxit/services'},
+        {label:'Computer Networking',href:'#/soxit/services'}
+      ],'soxit')+
+      menuPromo('SOXIT IT Consulting','Bespoke software development, IT consulting and enterprise technology solutions.','Enroll / Consult','#/soxit/consult','linear-gradient(135deg,#FF8A00,#FFB559)')
+    ),
+    community: megaPanel('right','w-[500px]','grid-cols-2',
+      menuCol('Ecosystem','bg-[#3E63DD]',[
+        {label:'About WeAvecU',href:'#/about'},
+        {label:'Academic Journals',href:'#/journals'},
+        {label:'Training Programs',href:'#/academy'},
+        {label:'Wellbeing Services',href:'#/health'}
+      ],'community')+
+      menuCol('Engage','bg-[#3E63DD]',[
+        {label:'Submit Research',href:'#/authors'},
+        {label:'Partner With Us',href:'#/for-partners'},
+        {label:'Contact Team',href:'#/about#contact'}
+      ],'community')
+    )
+  };
+}
+
+/* ============ NAV STRUCTURE ============ */
+const NAV_ITEMS = [
+  {label:'About', href:'#/about'},
+  {label:'Academy', href:'#/academy', menu:'academy'},
+  {label:'Mental Health', href:'#/health', menu:'health'},
+  {label:'Journals | Research', href:'#/journals', menu:'research'},
+  {label:'Announcements', href:'#/conferences'},
+  {label:'SOXIT', href:'#/soxit', menu:'soxit'},
+  {label:'Partner With Us', href:'#/for-partners'}
+];
+
+/* ============ HEADER ============ */
+function renderHeader(){
+  const mm = megaMenus();
+  return `
+  ${renderUtilityBar()}
+  <div class="bg-white/95 dark:bg-[#12152C]/95 backdrop-blur border-b border-borderc dark:border-white/10">
+    <div class="container-xl flex items-center justify-between h-[76px]">
+      <a href="#/" class="flex items-center gap-2.5 focus-ring" title="WeAvecU Ecosystem">
+        <img fetchpriority="high" width="220" height="44" src="https://weavecu.com/wp-content/uploads/2024/11/July-logo.jpg" class="h-10 w-auto object-contain" alt="WeAvecU Logo" />
+      </a>
+      <nav class="hidden xl:flex items-center gap-1">
+        ${NAV_ITEMS.map(it=> it.menu ? `
+        <div class="nav-item relative">
+          <button class="navlink hover:text-indigo hover:bg-bg dark:hover:bg-white/5 flex items-center gap-1 px-3 py-2 rounded-lg focus-ring">${it.label} ${icon('chevron-down','w-3.5 h-3.5 text-muted')}</button>
+          ${mm[it.menu]}
+        </div>` : `<a href="${it.href}" class="navlink hover:text-indigo hover:bg-bg dark:hover:bg-white/5 px-3 py-2 rounded-lg focus-ring">${it.label}</a>`
+        ).join('')}
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#/search" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-bg dark:hover:bg-white/10 focus-ring" title="Search">${icon('search','w-[18px] h-[18px]')}</a>
+        <a href="#/authors" class="hidden sm:inline-flex btn btn-primary text-[13.5px] py-2 px-4">Submit Manuscript</a>
+        <button id="mobileNavBtn" class="xl:hidden w-9 h-9 flex items-center justify-center focus-ring" aria-label="Toggle Navigation">${icon('menu','w-6 h-6')}</button>
+      </div>
+    </div>
+  </div>
+  <div id="mobileNav" class="hidden xl:hidden bg-white dark:bg-[#12152C] border-b border-borderc dark:border-white/10 max-h-[80vh] overflow-y-auto">
+    <div class="container-xl py-3 flex flex-col">
+      ${NAV_ITEMS.map((it,idx)=> it.menu ? `
+        <div class="border-b border-borderc dark:border-white/10 last:border-0">
+          <button class="mobile-acc-btn w-full flex items-center justify-between py-3 text-[15px] font-medium text-navy dark:text-white" data-acc="${idx}">
+            ${it.label} ${icon('chevron-down','w-4 h-4 text-muted transition-transform')}
+          </button>
+          <div class="mobile-acc-panel hidden pb-3 pl-3 space-y-1" data-panel="${idx}">
+            <a href="${it.href}" class="block py-1.5 text-[13.5px] text-indigo font-medium">View ${it.label} Hub →</a>
+            ${mobileSubLinks(it.menu)}
+          </div>
+        </div>` : `<a href="${it.href}" class="py-3 text-[15px] font-medium border-b border-borderc dark:border-white/10 last:border-0 text-navy dark:text-white">${it.label}</a>`
+      ).join('')}
+      <a href="#/search" class="py-3 text-[15px] font-medium border-b border-borderc dark:border-white/10 text-navy dark:text-white">Search</a>
+      <a href="#/login" class="py-3 text-[15px] font-medium text-navy dark:text-white">Login</a>
+    </div>
+  </div>`;
+}
+function mobileSubLinks(menu){
+  const groups = {
+    academy: [['All Programs','#/academy/courses'],['Learning Paths','#/academy/learning-paths'],['Certificates','#/academy/certificates'],['Corporate Learning','#/academy/corporate']],
+    health: [['Counselling Services','#/health'],['Training-Cum-Internship','#/health'],['Supervision & Mentorship','#/health'],['Expressive Art Therapy','#/health']],
+    research: [['Journal Directory','#/journals'],['Author Guidelines','#/authors'],['Publication Ethics','#/for-authors'],['Call for Papers','#/journals']],
+    soxit: [['Enroll / Consult with SOXIT','#/soxit/consult'],['IT Consulting','#/soxit/services/it-consulting'],['Web Development','#/soxit/services/web-development'],['Software Development','#/soxit/services/software-development'],['Computer Networking','#/soxit/services/computer-networking']],
+  };
+  return (groups[menu]||[]).map(([l,h])=>`<a href="${h}" class="block py-1.5 text-[13.5px] text-muted">${l}</a>`).join('');
+}
+</script>
+<script>
+/* ============ FOOTER ============ */
+function renderFooter(){
+  const col = (title, items) => `
+    <div>
+      <p class="font-semibold text-[14px] mb-4">${title}</p>
+      <ul class="space-y-2.5">${items.map(([l,h])=>`<li><a href="${h}" class="text-[13.5px] text-white/65 hover:text-white focus-ring">${l}</a></li>`).join('')}</ul>
+    </div>`;
+  return `
+  <div class="bg-navy text-white pt-16 pb-8 mt-24">
+    <div class="container-xl grid grid-cols-2 md:grid-cols-5 gap-10">
+      <div class="col-span-2 md:col-span-2">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-9 h-9 rounded-lg grad-indigo flex items-center justify-center font-bold text-white">W</div>
+          <div>
+            <p class="font-bold text-[17px]">WeAvecU Ecosystem</p>
+            <p class="text-[10.5px] text-white/50 -mt-0.5">Research · Education · Healthcare · Technology</p>
+          </div>
+        </div>
+        <p class="text-[13.5px] text-white/60 mb-5 max-w-sm leading-relaxed">Multidisciplinary ecosystem connecting academic research, behavioral science education, mental health services, and SOXIT technology consulting.</p>
+        <p class="text-[12.5px] text-teal font-medium mb-1">✓ 9+ Years of Professional Experience</p>
+        <p class="text-[12.5px] text-teal font-medium">✓ 100+ Mental Health Professionals Trained Annually</p>
+      </div>
+      ${col('Journals & Research', [
+        ['Journal Directory','#/journals'],
+        ['Psycho-Oncology (IJPOPP)','#/journals/ij-psyoncology'],
+        ['Spirituality & Cognition (IJSC)','#/journals/ijcogspirituality'],
+        ['Personality & Abilities (JPAMA)','#/journals/jpama'],
+        ['For Authors & Reviewers','#/authors']
+      ])}
+      ${col('Education & Wellbeing', [
+        ['All Programs','#/academy/courses'],
+        ['Research & Statistics','#/academy/courses/foundations-in-research-and-statistics'],
+        ['Mental Health First Aid','#/academy/courses/mental-health-first-aid'],
+        ['Expressive Art Therapy','#/health'],
+        ['Counselling & Supervision','#/health']
+      ])}
+      ${col('SOXIT Technology', [
+        ['Enroll / Consult with SOXIT','#/soxit/consult'],
+        ['IT Consulting','#/soxit/services/it-consulting'],
+        ['Web Development','#/soxit/services/web-development'],
+        ['Software Development','#/soxit/services/software-development'],
+        ['Computer Networking','#/soxit/services/computer-networking']
+      ])}
+    </div>
+    <div class="container-xl border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-[12.5px] text-white/50">© 2026 WeAvecU & SOXIT. All rights reserved.</p>
+      <div class="flex flex-wrap gap-x-5 gap-y-2 text-[12.5px] text-white/50">
+        <a href="#/about" class="hover:text-white focus-ring">About Us</a>
+        <a href="#/for-authors" class="hover:text-white focus-ring">Publication Ethics</a>
+        <a href="#/about#contact" class="hover:text-white focus-ring">Contact</a>
+      </div>
+    </div>
+  </div>`;
+}
+</script>
+<script>
+/* ============ SHARED UI COMPONENTS ============ */
+function breadcrumb(items){
+  return `<nav class="text-[13px] text-muted flex items-center gap-2 flex-wrap" aria-label="Breadcrumb">
+    ${items.map((it,i)=>`${i>0?'<span>/</span>':''}${it.href?`<a href="${it.href}" class="hover:text-indigo focus-ring">${it.label}</a>`:`<span class="text-navy dark:text-white font-medium">${it.label}</span>`}`).join('')}
+  </nav>`;
+}
+function sectionHeader(eyebrow,title,sub,cta){
+  return `<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+    <div>
+      ${eyebrow?`<p class="eyebrow mb-2">${eyebrow}</p>`:''}
+      <h2 class="text-[28px] md:text-[34px] font-bold text-navy dark:text-white">${title}</h2>
+      ${sub?`<p class="text-muted mt-2 max-w-xl leading-relaxed">${sub}</p>`:''}
+    </div>
+    ${cta?`<a href="${cta.href}" class="btn-ghost flex items-center gap-1">${cta.label} ${icon('arrow-right','w-4 h-4')}</a>`:''}
+  </div>`;
+}
+function pillarCard(title,desc,cta,href,ic,tint){
+  const tints = {indigo:['bg-indigo-50','text-indigo'], teal:['bg-[#E6FAF4]','text-teal'], soxit:['bg-[#FFF3E4]','text-soxit'], blue:['bg-[#EAF0FF]','text-[#3E63DD]']};
+  const [bg,tc] = tints[tint]||tints.indigo;
+  return `<div class="card p-7 flex flex-col">
+    <div class="w-14 h-14 rounded-xl ${bg} flex items-center justify-center ${tc} mb-5">${icon(ic,'w-7 h-7')}</div>
+    <h3 class="font-semibold text-[19px] mb-2 text-navy dark:text-white">${title}</h3>
+    <p class="text-muted text-[14.5px] mb-6 leading-relaxed flex-1">${desc}</p>
+    <a href="${href}" class="btn-ghost flex items-center gap-1 text-[14px] ${tc}">${cta} ${icon('arrow-right','w-4 h-4')}</a>
+  </div>`;
+}
+function programCard(p){
+  return `<a href="#/academy/courses/${p.slug}" class="card p-6 flex flex-col">
+    <div class="w-full h-32 rounded-xl grad-indigo mb-4 flex items-center justify-center">${icon(ICON_MAP[p.category]||'book-open','w-9 h-9 text-white/90')}</div>
+    <span class="chip bg-indigo-50 text-indigo w-fit mb-2">${p.category}</span>
+    <h3 class="font-semibold text-[16.5px] text-navy dark:text-white mb-2">${p.title}</h3>
+    <p class="text-[13.5px] text-muted mb-4 line-clamp-2 leading-relaxed">${p.description}</p>
+    <div class="text-[12.5px] text-muted flex items-center gap-3 mb-4 flex-wrap">
+      <span class="flex items-center gap-1">${icon('clock','w-3.5 h-3.5')}${p.duration}</span>
+      <span class="flex items-center gap-1">${icon('monitor','w-3.5 h-3.5')}${p.deliveryMode}</span>
+    </div>
+    <div class="mt-auto flex items-center justify-between pt-3 border-t border-borderc dark:border-white/10">
+      <span class="text-indigo text-[13px] font-semibold">Explore Program →</span>
+      <span class="text-[12px] text-teal font-medium">Verified Program</span>
+    </div>
+  </a>`;
+}
+function journalCard(j){
+  return `<div class="card p-6 flex flex-col">
+    <div class="flex items-center justify-between mb-3">
+      <span class="chip bg-[#E6FAF4] text-teal">${j.subject}</span>
+      <span class="chip bg-indigo-50 text-indigo">${j.access}</span>
+    </div>
+    <h3 class="font-semibold text-[17px] text-navy dark:text-white mb-1 leading-snug">${j.title}</h3>
+    <p class="text-[12.5px] text-muted mb-3 font-mono">ISSN ${j.issn} · ${j.frequency} · ${j.publisher}</p>
+    <p class="text-[13.5px] text-muted mb-5 line-clamp-3 leading-relaxed">${j.description}</p>
+    <div class="mt-auto pt-4 border-t border-borderc dark:border-white/10 flex flex-wrap items-center justify-between gap-2">
+      <a href="#/journals/${j.slug}" class="btn-ghost text-[13.5px]">Journal Overview →</a>
+      <a href="#/submit?journal=${j.slug}" class="btn btn-primary text-[12px] py-1.5 px-3">Submit Manuscript</a>
+    </div>
+  </div>`;
+}
+function soxitCard(s){
+  return `<div class="card p-6 flex flex-col">
+    <div class="w-12 h-12 rounded-lg bg-[#FFF3E4] text-soxit flex items-center justify-center mb-4">${icon(s.icon,'w-6 h-6')}</div>
+    <h3 class="font-semibold text-[16.5px] text-navy dark:text-white mb-2">${s.title}</h3>
+    <p class="text-[13.5px] text-muted mb-4 flex-1 leading-relaxed">${s.desc}</p>
+    <div class="flex items-center justify-between mt-auto pt-3 border-t border-borderc dark:border-white/10 gap-2">
+      <a href="#/soxit/services/${s.slug}" class="text-soxit text-[13px] font-semibold hover:underline">Details →</a>
+      <a href="#/soxit/consult?service=${s.slug}" class="btn bg-soxit text-white text-[12px] py-1.5 px-3 rounded-lg hover:opacity-90 font-medium">Enroll / Consult</a>
+    </div>
+  </div>`;
+}
+function soxitAcademiaCard(a){
+  return `<div class="card p-6 flex flex-col hover:border-[#FF6B6B]/40 transition-colors">
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-12 h-12 rounded-lg bg-[#FFF0F0] text-[#FF6B6B] flex items-center justify-center">${icon(a.icon,'w-6 h-6')}</div>
+      <span class="chip bg-[#FFF0F0] text-[#FF6B6B] text-[11px] font-semibold">${a.level}</span>
+    </div>
+    <span class="text-[12px] text-muted font-medium mb-1">${a.category}</span>
+    <h3 class="font-semibold text-[17px] text-navy dark:text-white mb-2 leading-snug">${a.title}</h3>
+    <p class="text-[13.5px] text-muted mb-4 flex-1 line-clamp-3 leading-relaxed">${a.desc}</p>
+    <div class="text-[12.5px] text-muted flex items-center gap-3 mb-4 flex-wrap">
+      <span class="flex items-center gap-1">${icon('clock','w-3.5 h-3.5 text-[#FF6B6B]')}${a.duration}</span>
+      <span class="flex items-center gap-1">${icon('award','w-3.5 h-3.5 text-teal')}Certified Track</span>
+    </div>
+    <div class="mt-auto pt-3 border-t border-borderc dark:border-white/10 flex items-center justify-between gap-2">
+      <a href="#/soxit-academia/${a.slug}" class="text-[#FF6B6B] text-[13px] font-semibold hover:underline">Curriculum →</a>
+      <a href="#/enroll?track=${a.slug}" class="btn bg-soxit text-white text-[12px] py-1.5 px-3 rounded-lg hover:opacity-90 font-medium">Enroll / Consult</a>
+    </div>
+  </div>`;
+}
+function healthCard(s){
+  return `<div class="card p-6 flex flex-col">
+    <div class="w-12 h-12 rounded-lg bg-[#E6FAF4] text-teal flex items-center justify-center mb-4">${icon(s.icon,'w-6 h-6')}</div>
+    <h3 class="font-semibold text-[16.5px] text-navy dark:text-white mb-2">${s.title}</h3>
+    <p class="text-[13.5px] text-muted mb-4 flex-1 leading-relaxed">${s.desc}</p>
+    <div class="mt-auto pt-3 border-t border-borderc dark:border-white/10 flex items-center justify-between">
+      <a href="#/health/book?service=${s.slug}" class="btn-ghost text-[13px] text-teal">Book Session / Enquire →</a>
+    </div>
+  </div>`;
+}
+function announcementCard(a){
+  return `<div class="card p-6 flex flex-col">
+    <span class="chip bg-indigo-50 text-indigo mb-3 w-fit">${a.category}</span>
+    <h3 class="font-semibold text-[17px] text-navy dark:text-white mb-2">${a.title}</h3>
+    <p class="text-[13px] text-muted flex items-center gap-2 mb-3">${icon('calendar','w-4 h-4')}${a.date}</p>
+    <p class="text-[13.5px] text-muted mb-5 leading-relaxed flex-1">${a.desc}</p>
+    <a href="${a.url}" class="btn btn-primary w-full justify-center text-[13.5px]">Details & Registration</a>
+  </div>`;
+}
+</script>
+<script>
+/* ============ HERO NETWORK ILLUSTRATION ============ */
+function heroNetwork(){
+  return `
+  <div class="relative w-full max-w-[560px] aspect-square mx-auto select-none flex items-center justify-center">
+    <!-- AI Neural Synapse SVG Layer -->
+    <svg viewBox="0 0 560 560" class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="ai-radial" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#5B3DF5" stop-opacity="0.25"/>
+          <stop offset="60%" stop-color="#7C4DFF" stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#5B3DF5" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#7C4DFF" stop-opacity="0.45"/>
+          <stop offset="100%" stop-color="#5B3DF5" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="grad-line-top" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stop-color="#5B3DF5"/>
+          <stop offset="100%" stop-color="#7C4DFF"/>
+        </linearGradient>
+        <linearGradient id="grad-line-left" x1="100%" y1="50%" x2="0%" y2="50%">
+          <stop offset="0%" stop-color="#5B3DF5"/>
+          <stop offset="100%" stop-color="#00B894"/>
+        </linearGradient>
+        <linearGradient id="grad-line-right" x1="0%" y1="50%" x2="100%" y2="50%">
+          <stop offset="0%" stop-color="#5B3DF5"/>
+          <stop offset="100%" stop-color="#FF8A00"/>
+        </linearGradient>
+        <linearGradient id="grad-line-bottom" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#5B3DF5"/>
+          <stop offset="100%" stop-color="#3E63DD"/>
+        </linearGradient>
+        <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- Background AI Ambient Field -->
+      <circle cx="280" cy="280" r="240" fill="url(#ai-radial)"/>
+      <circle cx="280" cy="280" r="140" fill="url(#core-glow)" class="anim-ai-pulse"/>
+
+      <!-- Outer Rotating Cybernetic Orbit Ring -->
+      <circle cx="280" cy="280" r="230" fill="none" stroke="#5B3DF5" stroke-width="1" stroke-dasharray="10 14" opacity="0.3" class="anim-spin-slow"/>
+      
+      <!-- Inner Counter-Rotating Hex/Orbit Ring -->
+      <circle cx="280" cy="280" r="170" fill="none" stroke="#7C4DFF" stroke-width="1.2" stroke-dasharray="4 8" opacity="0.35" class="anim-spin-reverse"/>
+
+      <!-- Radar Pulse Ring -->
+      <circle cx="280" cy="280" r="110" fill="none" stroke="#5B3DF5" stroke-width="1.5" opacity="0.4"/>
+
+      <!-- Dynamic Neural Synaptic Beams -->
+      <!-- Top Node Synapse -->
+      <path d="M 280 280 L 280 70" stroke="url(#grad-line-top)" stroke-width="2" opacity="0.75" class="anim-data-dash"/>
+      <circle cx="280" cy="70" r="4" fill="#7C4DFF" filter="url(#neon-glow)"/>
+
+      <!-- Left Node Synapse -->
+      <path d="M 280 280 L 80 220" stroke="url(#grad-line-left)" stroke-width="2" opacity="0.75" class="anim-data-dash"/>
+      <circle cx="80" cy="220" r="4" fill="#00B894" filter="url(#neon-glow)"/>
+
+      <!-- Right Node Synapse -->
+      <path d="M 280 280 L 480 220" stroke="url(#grad-line-right)" stroke-width="2" opacity="0.75" class="anim-data-dash"/>
+      <circle cx="480" cy="220" r="4" fill="#FF8A00" filter="url(#neon-glow)"/>
+
+      <!-- Bottom Node Synapse -->
+      <path d="M 280 280 L 280 490" stroke="url(#grad-line-bottom)" stroke-width="2" opacity="0.75" class="anim-data-dash"/>
+      <circle cx="280" cy="490" r="4" fill="#3E63DD" filter="url(#neon-glow)"/>
+
+      <!-- Tech HUD Crosshair Markers -->
+      <line x1="260" y1="280" x2="300" y2="280" stroke="#5B3DF5" stroke-width="1" opacity="0.4"/>
+      <line x1="280" y1="260" x2="280" y2="300" stroke="#5B3DF5" stroke-width="1" opacity="0.4"/>
+      <circle cx="280" cy="280" r="8" fill="none" stroke="#7C4DFF" stroke-width="1" opacity="0.5"/>
+    </svg>
+
+    <!-- Central AI Ecosystem Nucleus -->
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+      <a href="#/about" class="group block relative w-44 h-44 sm:w-48 sm:h-48 rounded-full bg-[#141733]/95 dark:bg-[#10132b]/95 backdrop-blur-md border-2 border-indigo-500/40 flex flex-col items-center justify-center text-white text-center shadow-2xl p-4 transition-all duration-300 hover:scale-105 hover:border-indigo-400 hover:shadow-[0_0_40px_rgba(91,61,245,0.6)] cursor-pointer">
+        <div class="absolute inset-0 rounded-full border border-indigo-400/20 anim-spin-slow pointer-events-none"></div>
+        <div class="w-10 h-10 rounded-xl grad-indigo flex items-center justify-center font-extrabold text-white text-[17px] shadow-lg mb-1.5 border border-white/20 group-hover:scale-110 transition-transform">
+          W
+        </div>
+        <p class="font-bold text-[16px] tracking-tight leading-tight text-white flex items-center gap-1 group-hover:text-indigo-200 transition-colors">
+          WeAvecU
+        </p>
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 mt-1 rounded-full text-[9px] font-mono font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>AI ECOSYSTEM
+        </span>
+        <p class="text-[9.5px] text-white/70 mt-1.5 leading-tight font-medium">
+          Research. Learning.<br/>Wellbeing. Technology.
+        </p>
+      </a>
+    </div>
+
+    <!-- NODE 1: TOP (Academy) -->
+    <div class="absolute left-1/2 -translate-x-1/2 top-0 z-20">
+      <a href="#/academy/courses" class="card node-card px-4 py-2.5 flex items-center gap-3 shadow-xl border border-indigo/20 bg-white/95 dark:bg-[#171B39]/95 backdrop-blur-sm group hover:-translate-y-1.5 hover:shadow-2xl hover:border-indigo-500/70 hover:bg-white dark:hover:bg-[#1D2248]">
+        <div class="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo flex items-center justify-center group-hover:scale-110 group-hover:bg-indigo-500 group-hover:text-white transition-all">
+          ${icon('graduation-cap','w-4.5 h-4.5')}
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <p class="font-bold text-[13.5px] text-navy dark:text-white group-hover:text-indigo transition-colors">Academy</p>
+            <span class="text-[9px] font-semibold text-indigo px-1.5 py-0.2 rounded bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/60">AI LABS</span>
+          </div>
+          <p class="text-[11px] text-muted">Programs & Training</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- NODE 2: LEFT (8 Academic Journals) -->
+    <div class="absolute left-0 top-[35%] z-20">
+      <a href="#/journals" class="card node-card px-4 py-2.5 flex items-center gap-3 shadow-xl border border-teal/20 bg-white/95 dark:bg-[#171B39]/95 backdrop-blur-sm group hover:-translate-x-1.5 hover:shadow-2xl hover:border-teal-500/70 hover:bg-white dark:hover:bg-[#1D2248]">
+        <div class="w-9 h-9 rounded-xl bg-[#E6FAF4] dark:bg-teal-950/80 text-teal flex items-center justify-center group-hover:scale-110 group-hover:bg-teal-500 group-hover:text-white transition-all">
+          ${icon('book-open','w-4.5 h-4.5')}
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <p class="font-bold text-[13.5px] text-navy dark:text-white group-hover:text-teal transition-colors">8 Academic Journals</p>
+          </div>
+          <p class="text-[11px] text-muted">Peer-Reviewed & Open</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- NODE 3: RIGHT (SOXIT Consulting) -->
+    <div class="absolute right-0 top-[35%] z-20">
+      <a href="#/soxit" class="card node-card px-4 py-2.5 flex items-center gap-3 shadow-xl border border-soxit/20 bg-white/95 dark:bg-[#171B39]/95 backdrop-blur-sm group hover:translate-x-1.5 hover:shadow-2xl hover:border-amber-500/70 hover:bg-white dark:hover:bg-[#1D2248]">
+        <div class="w-9 h-9 rounded-xl bg-[#FFF3E4] dark:bg-orange-950/80 text-soxit flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FF8A00] group-hover:text-white transition-all">
+          ${icon('cpu','w-4.5 h-4.5')}
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <p class="font-bold text-[13.5px] text-navy dark:text-white group-hover:text-soxit transition-colors">SOXIT Consulting</p>
+            <span class="text-[9px] font-semibold text-soxit px-1.5 py-0.2 rounded bg-[#FFF3E4] dark:bg-orange-950/60 border border-orange-200 dark:border-orange-800/60">AI FORGE</span>
+          </div>
+          <p class="text-[11px] text-muted">IT & Custom Software</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- NODE 4: BOTTOM (Mental Health) -->
+    <div class="absolute left-1/2 -translate-x-1/2 bottom-0 z-20">
+      <a href="#/health" class="card node-card px-4 py-2.5 flex items-center gap-3 shadow-xl border border-[#3E63DD]/20 bg-white/95 dark:bg-[#171B39]/95 backdrop-blur-sm group hover:translate-y-1.5 hover:shadow-2xl hover:border-[#3E63DD]/70 hover:bg-white dark:hover:bg-[#1D2248]">
+        <div class="w-9 h-9 rounded-xl bg-[#EAF0FF] dark:bg-blue-950/80 text-[#3E63DD] flex items-center justify-center group-hover:scale-110 group-hover:bg-[#3E63DD] group-hover:text-white transition-all">
+          ${icon('heart-handshake','w-4.5 h-4.5')}
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <p class="font-bold text-[13.5px] text-navy dark:text-white group-hover:text-[#3E63DD] transition-colors">Mental Health</p>
+          </div>
+          <p class="text-[11px] text-muted">Counselling & Internships</p>
+        </div>
+      </a>
+    </div>
+  </div>`;
+}
+
+/* ============ PAGE: HOME ============ */
+function pageHome(){
+  return `
+  <section class="container-xl pt-14 pb-16 grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <p class="eyebrow mb-4">WeAvecU & SOXIT Unified Ecosystem</p>
+      <h1 class="text-[38px] md:text-[50px] font-bold leading-[1.1] text-navy dark:text-white">Research. Learning.<br/><span class="text-indigo">Wellbeing. Technology.</span></h1>
+      <p class="text-muted text-[16px] mt-5 max-w-lg leading-relaxed">A central gateway consolidating 8 peer-reviewed academic journals, behavioral science academy, clinical mental health services, SOXIT technology consulting, and AI Forge innovation programs.</p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="#/journals" class="btn btn-primary">8 Academic Journals ${icon('arrow-right','w-4 h-4')}</a>
+        <a href="#/soxit-academia" class="btn btn-secondary">AI Forge & iSkill</a>
+        <a href="#/soxit" class="btn btn-secondary">SOXIT Consulting</a>
+        <a href="#/academy/courses" class="btn btn-secondary">Academy Courses</a>
+      </div>
+    </div>
+    ${heroNetwork()}
+  </section>
+
+  <section class="container-xl py-6">
+    <div class="bg-navy rounded-2xl p-6 md:p-8 text-white grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <p class="text-2xl md:text-3xl font-bold text-teal">9+ Years</p>
+        <p class="text-[13px] text-white/70 mt-1">Professional Excellence</p>
+      </div>
+      <div>
+        <p class="text-2xl md:text-3xl font-bold text-teal">8 Journals</p>
+        <p class="text-[13px] text-white/70 mt-1">Peer-Reviewed Open Access</p>
+      </div>
+      <div>
+        <p class="text-2xl md:text-3xl font-bold text-soxit">6 Tech Tracks</p>
+        <p class="text-[13px] text-white/70 mt-1">iSkill & AI Forge Labs</p>
+      </div>
+      <div>
+        <p class="text-2xl md:text-3xl font-bold text-indigo">100+ Trainees</p>
+        <p class="text-[13px] text-white/70 mt-1">Mental Health & Tech Annually</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-xl py-14">
+    ${sectionHeader(null,'Ecosystem Verticals','Unified multidisciplinary services for researchers, tech practitioners, psychologists, and enterprises.')}
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      ${pillarCard('Journals & Research','Discover our 8 peer-reviewed academic journals in psychology, assessment, psycho-oncology and mass communication.','Explore Journals','#/journals','book-open','teal')}
+      ${pillarCard('SOXIT Academia & AI Forge','Immersive iSkill virtual labs, applied AI accelerator, and structured industry tech internships.','Explore AI Forge','#/soxit-academia','sparkles','soxit')}
+      ${pillarCard('Education & Training','Verified programs including Foundations in Research & Statistics, Mental Health First Aid, and Expressive Art Therapy.','Explore Academy','#/academy/courses','graduation-cap','indigo')}
+      ${pillarCard('Mental Health & Wellbeing','Counselling services, clinical training-cum-internships, supervision, and corporate wellness initiatives.','View Care Services','#/health','heart-handshake','blue')}
+    </div>
+  </section>
+
+  <section class="container-xl py-14">
+    ${sectionHeader('SOXIT Academia & AI Forge','Applied Intelligence & Tech Accelerator','Consolidated hands-on programs from virtual labs to generative AI and enterprise internships.',{label:'View All 6 Tracks',href:'#/soxit-academia'})}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      ${DATA.soxitAcademia.slice(0,3).map(soxitAcademiaCard).join('')}
+    </div>
+  </section>
+
+  <section class="container-xl py-14">
+    ${sectionHeader('Academic Publishing','Our 8 Peer-Reviewed Journals','Open-access platforms for research dissemination with active quarterly issues.',{label:'View All 8 Journals',href:'#/journals'})}
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      ${DATA.journals.slice(0,4).map(journalCard).join('')}
+    </div>
+  </section>
+
+  <section class="container-xl py-14">
+    ${sectionHeader('WeAvecU Academy','Verified Programs & Training Courses','Skill-building certifications designed for researchers, psychologists, and educators.',{label:'View All Programs',href:'#/academy/courses'})}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      ${DATA.programs.slice(0,3).map(programCard).join('')}
+    </div>
+  </section>
+
+  <section class="py-14" style="background:linear-gradient(180deg,#FFF6EA,transparent)">
+    <div class="container-xl">
+      ${sectionHeader('SOXIT Technology','IT Consulting & Software Engineering','Empowering organizations with tailored technological solutions and cloud architectures.',{label:'Explore Services',href:'#/soxit/services'})}
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-5">
+        ${DATA.soxitServices.slice(0,4).map(soxitCard).join('')}
+      </div>
+    </div>
+  </section>
+
+  <section class="container-xl py-14">
+    ${sectionHeader('Announcements','Academic & Training Updates','Latest calls for papers and active course cohort enrollments.',{label:'View Announcements',href:'#/conferences'})}
+    <div class="grid md:grid-cols-3 gap-6">
+      ${DATA.announcements.map(announcementCard).join('')}
+    </div>
+  </section>
+
+  <section class="container-xl pb-20">
+    <div class="rounded-2xl grad-indigo px-8 md:px-14 py-14 text-center text-white">
+      <h2 class="text-[28px] md:text-[36px] font-bold mb-4">Engage With the Unified Ecosystem</h2>
+      <p class="text-white/85 max-w-xl mx-auto mb-8">Submit your research, enroll in verified certification programs, join AI Forge, or schedule a technology consultation.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="#/submit" class="btn bg-white text-indigo hover:bg-white/90">Submit Manuscript</a>
+        <a href="#/soxit-academia" class="btn bg-white/15 text-white hover:bg-white/25">Join AI Forge</a>
+        <a href="#/enroll" class="btn bg-white/15 text-white hover:bg-white/25">Enroll in Courses</a>
+        <a href="#/soxit/consult" class="btn bg-white/15 text-white hover:bg-white/25">Consult With SOXIT</a>
+      </div>
+    </div>
+  </section>
+  `;
+}
+
+/* ============ PAGE: ACADEMY ============ */
+function pageAcademy(){
+  return `
+  <section class="bg-white dark:bg-[#12152C] border-b border-borderc dark:border-white/10">
+    <div class="container-xl py-14">
+      ${breadcrumb([{label:'Home',href:'#/'},{label:'Academy'}])}
+      <h1 class="text-[34px] md:text-[42px] font-bold mt-4 text-navy dark:text-white">Education & Professional Training</h1>
+      <p class="text-muted mt-3 max-w-xl">Evidence-based courses and certification programs in research methodology, psychology, expressive therapies, and child development.</p>
+      <div class="mt-6 flex gap-2 max-w-xl">
+        <a href="#/academy/courses" class="btn btn-primary">Browse All Programs</a>
+        <a href="#/academy/learning-paths" class="btn btn-secondary">Explore Tracks</a>
+      </div>
+    </div>
+  </section>
+  <section class="container-xl py-14">
+    ${sectionHeader(null,'Featured Programs',null,{label:'View all programs',href:'#/academy/courses'})}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">${DATA.programs.slice(0,6).map(programCard).join('')}</div>
+  </section>
+  <section class="container-xl py-14">
+    ${sectionHeader(null,'Structured Learning Tracks',null,{label:'View learning paths',href:'#/academy/learning-paths'})}
+    <div class="grid md:grid-cols-3 gap-6">
+      ${DATA.learningPaths.map(p=>`<a href="#/academy/learning-paths/${p.slug}" class="card p-6 flex flex-col">
+        <span class="chip bg-indigo-50 text-indigo mb-3 w-fit">${p.level}</span>
+        <h3 class="font-semibold text-[17px] text-navy dark:text-white mb-3">${p.title}</h3>
+        <div class="space-y-2 mb-4">${p.courses.map(c=>`<div class="flex items-center gap-2 text-[13px] text-muted">${icon('circle-dot','w-3.5 h-3.5 text-indigo')}${c}</div>`).join('')}</div>
+        <span class="mt-auto text-indigo text-[13px] font-semibold">View Track Details →</span>
+      </a>`).join('')}
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: COURSE DIRECTORY ============ */
+function pageCourses(){
+  return `
+  <section class="container-xl py-10">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'Academy',href:'#/academy'},{label:'Programs'}])}
+    <h1 class="text-[30px] font-bold mt-4 mb-2 text-navy dark:text-white">Programs & Course Directory</h1>
+    <p class="text-muted mb-8 max-w-xl">Explore our verified WeAvecU courses and certifications in applied psychology, research methodology, and therapeutic modalities.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">${DATA.programs.map(programCard).join('')}</div>
+  </section>`;
+}
+
+/* ============ PAGE: COURSE DETAIL ============ */
+function pageCourseDetail(slug){
+  const p = DATA.programs.find(x=>x.slug===slug) || DATA.programs[0];
+  return `
+  <section class="container-xl py-10">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'Academy',href:'#/academy'},{label:'Programs',href:'#/academy/courses'},{label:p.title}])}
+    <div class="grid lg:grid-cols-[1fr_360px] gap-10 mt-6">
+      <div>
+        <span class="chip bg-indigo-50 text-indigo mb-3">${p.category}</span>
+        <h1 class="text-[30px] md:text-[36px] font-bold text-navy dark:text-white mb-3">${p.title}</h1>
+        <p class="text-muted text-[15.5px] mb-6 leading-relaxed">${p.description}</p>
+        <div class="flex flex-wrap gap-5 text-[13.5px] text-muted mb-10 pb-6 border-b border-borderc dark:border-white/10">
+          <span class="flex items-center gap-1.5">${icon('clock','w-4 h-4 text-indigo')}${p.duration}</span>
+          <span class="flex items-center gap-1.5">${icon('monitor','w-4 h-4 text-indigo')}${p.deliveryMode}</span>
+          <span class="flex items-center gap-1.5">${icon('award','w-4 h-4 text-teal')}${p.certification}</span>
+        </div>
+        <div class="mb-8">
+          <h2 class="font-semibold text-[19px] text-navy dark:text-white mb-3">Eligibility & Audience</h2>
+          <p class="text-[14.5px] text-muted leading-relaxed">${p.eligibility}</p>
+        </div>
+        <div class="mb-8">
+          <h2 class="font-semibold text-[19px] text-navy dark:text-white mb-3">Curriculum Overview</h2>
+          <ul class="space-y-2.5">${p.curriculum.map(c=>`<li class="flex items-center gap-2.5 text-[14px] text-muted"><span class="w-1.5 h-1.5 rounded-full bg-indigo"></span>${c}</li>`).join('')}</ul>
+        </div>
+        <div class="mb-8">
+          <h2 class="font-semibold text-[19px] text-navy dark:text-white mb-3">Certification</h2>
+          <p class="text-[14.5px] text-muted leading-relaxed">${p.certification}</p>
+        </div>
+      </div>
+      <aside class="h-fit lg:sticky lg:top-24 card p-6">
+        <div class="w-full h-32 rounded-xl grad-indigo mb-5 flex items-center justify-center">${icon(ICON_MAP[p.category]||'book-open','w-10 h-10 text-white/90')}</div>
+        <a href="#/enroll?course=${p.slug}" class="btn btn-primary w-full justify-center mb-3">Enroll in Program</a>
+        <a href="#/about#contact" class="btn btn-secondary w-full justify-center mb-4">Enquire via Contact</a>
+        <ul class="space-y-3 text-[13.5px] text-muted border-t border-borderc dark:border-white/10 pt-4">
+          <li class="flex justify-between"><span>Duration</span><span class="font-medium text-navy dark:text-white">${p.duration}</span></li>
+          <li class="flex justify-between"><span>Format</span><span class="font-medium text-navy dark:text-white">${p.deliveryMode}</span></li>
+          <li class="flex justify-between"><span>Category</span><span class="font-medium text-navy dark:text-white">${p.category}</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: LEARNING PATH DETAIL ============ */
+function pageLearningPath(slug){
+  const p = DATA.learningPaths.find(x=>x.slug===slug) || DATA.learningPaths[0];
+  return `
+  <section class="container-xl py-10">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'Academy',href:'#/academy'},{label:'Learning Paths',href:'#/academy/learning-paths'},{label:p.title}])}
+    <h1 class="text-[30px] font-bold mt-4 mb-2 text-navy dark:text-white">${p.title}</h1>
+    <p class="text-muted mb-10">${p.level}</p>
+    <div class="flex flex-col items-center gap-0 max-w-md mx-auto">
+      ${p.courses.map((c,i)=>`
+        <div class="card p-5 w-full flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full grad-indigo text-white flex items-center justify-center font-semibold">${i+1}</div>
+          <p class="font-medium text-[14.5px] text-navy dark:text-white">${c}</p>
+        </div>
+        ${i<p.courses.length-1?`<div class="py-2">${icon('arrow-down','w-5 h-5 text-indigo')}</div>`:''}
+      `).join('')}
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: MENTAL HEALTH ============ */
+function pageHealth(){
+  return `
+  <section class="bg-white dark:bg-[#12152C] border-b border-borderc dark:border-white/10">
+    <div class="container-xl py-14">
+      ${breadcrumb([{label:'Home',href:'#/'},{label:'Mental Health & Wellbeing'}])}
+      <p class="eyebrow mb-3" style="color:var(--teal)">WeAvecU Mental Health Division</p>
+      <h1 class="text-[34px] md:text-[42px] font-bold text-navy dark:text-white">Mental Health & Psychological Wellbeing</h1>
+      <p class="text-muted mt-3 max-w-xl">Evidence-based counselling services, expressive art therapy, professional supervision, and clinical training-cum-internships.</p>
+    </div>
+  </section>
+  <section class="container-xl py-14">
+    ${sectionHeader(null,'Verified Mental Health Services',null)}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      ${DATA.mentalHealthServices.map(healthCard).join('')}
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: JOURNAL DIRECTORY ============ */
+function pageJournals(){
+  return `
+  <section class="container-xl py-10">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'Journals & Research'}])}
+    <h1 class="text-[30px] font-bold mt-4 mb-2 text-navy dark:text-white">WeAvecU Academic Journals</h1>
+    <p class="text-muted mb-8 max-w-2xl">Peer-reviewed, open-access international research journals covering psychology, psycho-oncology, psychometrics, organizational research, and media studies.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+      ${DATA.journals.map(journalCard).join('')}
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: JOURNAL DETAIL ============ */
+function pageJournalDetail(slug){
+  const j = DATA.journals.find(x=>x.slug===slug) || DATA.journals[0];
+  return `
+  <section class="container-xl py-10">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'Journals',href:'#/journals'},{label:j.title}])}
+    <div class="grid lg:grid-cols-[1fr_340px] gap-10 mt-6">
+      <div>
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="chip bg-[#E6FAF4] text-teal">${j.subject}</span>
+          <span class="chip bg-indigo-50 text-indigo">${j.access}</span>
+          <span class="chip bg-slate-100 dark:bg-white/10 text-muted">${j.language}</span>
+        </div>
+        <h1 class="text-[28px] md:text-[34px] font-bold text-navy dark:text-white mb-2">${j.title}</h1>
+        <p class="text-[13.5px] text-muted mb-8 font-mono">ISSN ${j.issn} ${j.eissn ? `· E-ISSN ${j.eissn}` : ''} · ${j.frequency} · Publisher: ${j.publisher}</p>
+        
+        <div class="mb-8">
+          <h2 class="font-semibold text-[18px] text-navy dark:text-white mb-2">About the Journal</h2>
+          <p class="text-[14.5px] text-muted leading-relaxed">${j.description}</p>
+        </div>
+        
+        <div class="mb-8">
+          <h2 class="font-semibold text-[18px] text-navy dark:text-white mb-2">Aims & Scope</h2>
+          <p class="text-[14.5px] text-muted leading-relaxed">${j.aimsScope}</p>
+        </div>
+        
+        <div class="mb-8">
+          <h2 class="font-semibold text-[18px] text-navy dark:text-white mb-3">Journal Publishing Standards</h2>
+          <div class="grid sm:grid-cols-2 gap-4 text-[13.5px]">
+            <div class="card p-4">
+              <p class="font-semibold text-navy dark:text-white mb-1">Double-Blind Peer Review</p>
+              <p class="text-muted">Rigorous objective evaluation by independent subject-matter scholars.</p>
+            </div>
+            <div class="card p-4">
+              <p class="font-semibold text-navy dark:text-white mb-1">Open Access Dissemination</p>
+              <p class="text-muted">Global barrier-free access under standard scholarly licensing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <h2 class="font-semibold text-[18px] text-navy dark:text-white mb-3">Editorial & Author Resources</h2>
+          <div class="grid sm:grid-cols-2 gap-3 text-[13.5px]">
+            <a href="#/authors" class="card p-3.5 flex items-center justify-between hover:text-indigo">
+              <span class="flex items-center gap-2">${icon('file-text','w-4 h-4 text-indigo')} Author Guidelines</span>
+              ${icon('arrow-right','w-3.5 h-3.5 text-muted')}
+            </a>
+            <a href="#/for-authors" class="card p-3.5 flex items-center justify-between hover:text-indigo">
+              <span class="flex items-center gap-2">${icon('shield-check','w-4 h-4 text-teal')} Publication Ethics</span>
+              ${icon('arrow-right','w-3.5 h-3.5 text-muted')}
+            </a>
+            <a href="#/for-reviewers" class="card p-3.5 flex items-center justify-between hover:text-indigo">
+              <span class="flex items-center gap-2">${icon('check-circle','w-4 h-4 text-indigo')} Peer Review Policy</span>
+              ${icon('arrow-right','w-3.5 h-3.5 text-muted')}
+            </a>
+            <a href="#/for-editors" class="card p-3.5 flex items-center justify-between hover:text-indigo">
+              <span class="flex items-center gap-2">${icon('users','w-4 h-4 text-purple')} Editorial Governance</span>
+              ${icon('arrow-right','w-3.5 h-3.5 text-muted')}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="h-fit lg:sticky lg:top-24 card p-6">
+        <p class="font-semibold text-[15px] text-navy dark:text-white mb-4">Journal Metadata</p>
+        <div class="space-y-3 text-[13.5px] text-muted mb-6">
+          <p class="flex justify-between"><span>ISSN</span><span class="font-medium text-navy dark:text-white font-mono">${j.issn}</span></p>
+          ${j.eissn ? `<p class="flex justify-between"><span>E-ISSN</span><span class="font-medium text-navy dark:text-white font-mono">${j.eissn}</span></p>` : ''}
+          <p class="flex justify-between"><span>Abbreviation</span><span class="font-medium text-navy dark:text-white">${j.abbreviation}</span></p>
+          <p class="flex justify-between"><span>Frequency</span><span class="font-medium text-navy dark:text-white">${j.frequency}</span></p>
+          <p class="flex justify-between"><span>Access</span><span class="font-medium text-navy dark:text-white">${j.access}</span></p>
+          <p class="flex justify-between"><span>Language</span><span class="font-medium text-navy dark:text-white">${j.language}</span></p>
+          <p class="flex justify-between"><span>Year Started</span><span class="font-medium text-navy dark:text-white">${j.yearStarted}</span></p>
+          <p class="flex justify-between"><span>Publisher</span><span class="font-medium text-navy dark:text-white text-right">${j.publisher}</span></p>
+          ${j.email ? `<p class="flex justify-between"><span>Editorial Email</span><a href="mailto:${j.email}" class="font-medium text-indigo text-right">${j.email}</a></p>` : ''}
+        </div>
+        <a href="#/submit?journal=${j.slug}" class="btn btn-primary w-full justify-center mb-2">Submit Manuscript to ${j.abbreviation}</a>
+        <a href="#/authors" class="btn btn-secondary w-full justify-center text-[13px]">Submission Checklist</a>
+      </aside>
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: SOXIT ============ */
+function pageSoxit(){
+  return `
+  <section class="border-b border-borderc dark:border-white/10" style="background:linear-gradient(180deg,#FFF6EA,transparent)">
+    <div class="container-xl py-14">
+      ${breadcrumb([{label:'Home',href:'#/'},{label:'SOXIT'}])}
+      <p class="eyebrow mb-3" style="color:var(--soxit)">SOXIT — Technology & IT Consulting</p>
+      <h1 class="text-[34px] md:text-[46px] font-bold text-navy dark:text-white">Technology. Transformation. Impact.</h1>
+      <p class="text-muted mt-3 max-w-xl">Bespoke software development, IT consulting, application engineering, and enterprise networking solutions.</p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <a href="#/soxit/services" class="btn btn-soxit">Explore SOXIT Services ${icon('arrow-right','w-4 h-4')}</a>
+        <a href="#/soxit/consult" class="btn btn-secondary border-soxit/30 hover:bg-[#FFF3E4]">Enroll / Consult With SOXIT</a>
+      </div>
+    </div>
+  </section>
+  <section class="container-xl py-14">
+    ${sectionHeader(null,'Verified SOXIT Services',null)}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      ${DATA.soxitServices.map(soxitCard).join('')}
+    </div>
+  </section>`;
+}
+function pageSoxitServices(){
+  return `<section class="container-xl py-10">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'SOXIT',href:'#/soxit'},{label:'Services'}])}
+    <h1 class="text-[30px] font-bold mt-4 mb-8 text-navy dark:text-white">SOXIT Technology Services</h1>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      ${DATA.soxitServices.map(soxitCard).join('')}
+    </div>
+  </section>`;
+}
+function pageSoxitServiceDetail(slug){
+  const s = DATA.soxitServices.find(x=>x.slug===slug) || DATA.soxitServices[0];
+  return `<section class="container-xl py-10">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'SOXIT',href:'#/soxit'},{label:'Services',href:'#/soxit/services'},{label:s.title}])}
+    <div class="grid lg:grid-cols-[1fr_320px] gap-10 mt-6">
+      <div>
+        <div class="w-14 h-14 rounded-xl bg-[#FFF3E4] text-soxit flex items-center justify-center mb-5">${icon(s.icon,'w-7 h-7')}</div>
+        <h1 class="text-[30px] md:text-[36px] font-bold text-navy dark:text-white mb-3">${s.title}</h1>
+        <p class="text-muted text-[15.5px] mb-8 leading-relaxed">${s.desc}</p>
+        <div class="mb-8">
+          <h2 class="font-semibold text-[18px] text-navy dark:text-white mb-2">Service Overview</h2>
+          <p class="text-[14.5px] text-muted leading-relaxed">SOXIT provides end-to-end ${s.title.toLowerCase()} tailored to modern institutional requirements, ensuring robust performance, scalability, and security.</p>
+        </div>
+      </div>
+      <aside class="h-fit lg:sticky lg:top-24 card p-6">
+        <p class="font-semibold text-[15px] text-navy dark:text-white mb-4">Interested in ${s.title}?</p>
+        <a href="#/soxit/consult?service=${s.slug}" class="btn btn-soxit w-full justify-center mb-2">Enroll / Consult on ${s.title}</a>
+        <a href="#/soxit/services" class="btn btn-secondary w-full justify-center text-[13px]">All Services</a>
+      </aside>
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: CONFERENCES & ANNOUNCEMENTS ============ */
+function pageConferences(){
+  return `
+  <section class="border-b border-borderc dark:border-white/10 bg-white dark:bg-[#12152C]">
+    <div class="container-xl py-14">
+      ${breadcrumb([{label:'Home',href:'#/'},{label:'Announcements & Calls'}])}
+      <h1 class="text-[34px] md:text-[42px] font-bold text-navy dark:text-white">Research & Training Announcements</h1>
+      <p class="text-muted mt-3 max-w-xl">Active calls for papers, training cohorts, and academic milestones across the WeAvecU ecosystem.</p>
+    </div>
+  </section>
+  <section class="container-xl py-14">
+    <div class="grid md:grid-cols-3 gap-6">${DATA.announcements.map(announcementCard).join('')}</div>
+  </section>`;
+}
+
+/* ============ PAGE: COMMUNITY & ABOUT ============ */
+function pageCommunity(){
+  return `
+  <section class="border-b border-borderc dark:border-white/10 bg-white dark:bg-[#12152C]">
+    <div class="container-xl py-14">
+      ${breadcrumb([{label:'Home',href:'#/'},{label:'Community'}])}
+      <h1 class="text-[34px] md:text-[42px] font-bold text-navy dark:text-white">WeAvecU Academic & Professional Community</h1>
+      <p class="text-muted mt-3 max-w-xl">Connecting researchers, psychologists, educators, and technology consultants across our shared ecosystem.</p>
+    </div>
+  </section>
+  <section class="container-xl py-14 grid md:grid-cols-3 gap-6">
+    <div class="card p-6">
+      <h3 class="font-semibold text-[17px] text-navy dark:text-white mb-2">Authors & Researchers</h3>
+      <p class="text-[13.5px] text-muted mb-4">Publish in our 8 quarterly peer-reviewed journals.</p>
+      <a href="#/authors" class="btn btn-primary text-[13px]">Author Guidelines</a>
+    </div>
+    <div class="card p-6">
+      <h3 class="font-semibold text-[17px] text-navy dark:text-white mb-2">Students & Trainees</h3>
+      <p class="text-[13.5px] text-muted mb-4">Join our clinical training-cum-internships and psychology courses.</p>
+      <a href="#/academy/courses" class="btn btn-primary text-[13px]">Explore Programs</a>
+    </div>
+    <div class="card p-6">
+      <h3 class="font-semibold text-[17px] text-navy dark:text-white mb-2">Institutional Partners</h3>
+      <p class="text-[13.5px] text-muted mb-4">Collaborate with SOXIT and WeAvecU on enterprise projects.</p>
+      <a href="#/for-partners" class="btn btn-primary text-[13px]">Partner With Us</a>
+    </div>
+  </section>`;
+}
+
+function pageAbout(){
+  return `<section class="container-xl py-14 max-w-4xl">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'About'}])}
+    <h1 class="text-[34px] font-bold mt-4 mb-4 text-navy dark:text-white">About WeAvecU & SOXIT</h1>
+    <p class="text-muted leading-relaxed mb-8">WeAvecU is a multidisciplinary organization uniting academic journal publishing, psychological research, clinical mental health services, professional education, and SOXIT technology consulting into one cohesive ecosystem.</p>
+    <div class="space-y-8">
+      <div id="mission" class="card p-6">
+        <h2 class="font-semibold text-[18px] text-navy dark:text-white mb-2">Our Mission</h2>
+        <p class="text-[14px] text-muted leading-relaxed">To empower individuals, scholars, and organizations through accessible academic publishing, empathetic mental healthcare, rigorous skill-building, and robust technology solutions.</p>
+      </div>
+      <div id="contact" class="card p-6 scroll-mt-24">
+        <h2 class="font-semibold text-[18px] text-navy dark:text-white mb-3">Contact Information</h2>
+        <p class="text-[14px] text-muted leading-relaxed mb-4">Connect with our journal editorial teams, academic training coordinator, or SOXIT IT consulting team.</p>
+        <div class="grid sm:grid-cols-2 gap-4 text-[13.5px] text-muted">
+          <div class="card p-4 bg-bg dark:bg-[#161A38]">
+            <p class="font-semibold text-navy dark:text-white mb-1">Main Organization</p>
+            <p class="text-[13px] mb-2">WeAvecU / We Avec U Foundation</p>
+            <a href="#/about#contact" class="btn-ghost text-[13px] text-indigo p-0">Editorial & Academic Secretariat →</a>
+          </div>
+          <div class="card p-4 bg-bg dark:bg-[#161A38]">
+            <p class="font-semibold text-navy dark:text-white mb-1">Technology Partner</p>
+            <p class="text-[13px] mb-2">SOXIT IT Consulting</p>
+            <a href="#/soxit/consult" class="btn-ghost text-[13px] text-soxit p-0">Schedule SOXIT Discovery Session →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: SEARCH ============ */
+function pageSearch(){
+  return `<section class="container-xl py-14">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'Search'}])}
+    <h1 class="text-[30px] font-bold mt-4 mb-6 text-navy dark:text-white">Search Directory</h1>
+    <div class="flex items-center gap-2 bg-white dark:bg-[#171B39] rounded-xl px-4 border border-borderc dark:border-white/10 max-w-xl mb-10">
+      ${icon('search','w-4 h-4 text-muted')}
+      <input id="realSearchInput" oninput="handleSearch(this.value)" class="bg-transparent py-3 flex-1 text-[14px] outline-none" placeholder="Search journals, programs, mental health & SOXIT services..."/>
+    </div>
+    <div id="searchResults" class="space-y-8">
+      <div>
+        <h2 class="font-semibold text-[18px] text-navy dark:text-white mb-4">Academic Journals (${DATA.journals.length})</h2>
+        <div class="grid md:grid-cols-2 gap-5">${DATA.journals.map(journalCard).join('')}</div>
+      </div>
+      <div>
+        <h2 class="font-semibold text-[18px] text-navy dark:text-white mb-4">Programs & Training (${DATA.programs.length})</h2>
+        <div class="grid md:grid-cols-3 gap-5">${DATA.programs.map(programCard).join('')}</div>
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: SOXIT ACADEMIA & AI FORGE ============ */
+function pageSoxitAcademia(){
+  return `
+  <section class="border-b border-borderc dark:border-white/10" style="background:linear-gradient(180deg,#FFF0F0,transparent)">
+    <div class="container-xl py-14">
+      ${breadcrumb([{label:'Home',href:'#/'},{label:'SOXIT Academia & AI Forge'}])}
+      <div class="flex items-center gap-2 mt-4 mb-3">
+        <span class="chip bg-[#FFF0F0] text-[#FF6B6B] font-bold">SOXIT AI FORGE & iSKILL</span>
+        <span class="chip bg-[#E6FAF4] text-teal font-medium">Industry-Verified</span>
+      </div>
+      <h1 class="text-[34px] md:text-[46px] font-bold text-navy dark:text-white leading-tight">Applied Intelligence, Virtual Labs & Tech Internships</h1>
+      <p class="text-muted mt-3 max-w-2xl text-[16px] leading-relaxed">Bridge the academia-industry divide. Access immersive iSkill simulated labs, applied AI engineering tracks, live enterprise sandboxes, and structured placement-focused technical cohorts.</p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="#/enroll?track=ai-forge-accelerator" class="btn btn-primary bg-[#FF6B6B] hover:bg-[#FF5252] border-none text-white">Join Next Cohort ${icon('sparkles','w-4 h-4')}</a>
+        <a href="#/soxit/consult" class="btn btn-secondary">Institutional & University Labs</a>
+        <a href="#/soxit" class="btn btn-secondary">SOXIT Consulting Hub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-xl py-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="card p-5 text-center">
+        <p class="text-2xl md:text-3xl font-bold text-[#FF6B6B]">100%</p>
+        <p class="text-[12.5px] text-muted mt-1 font-medium">Hands-on Project Based</p>
+      </div>
+      <div class="card p-5 text-center">
+        <p class="text-2xl md:text-3xl font-bold text-teal">6 Tracks</p>
+        <p class="text-[12.5px] text-muted mt-1 font-medium">AI, Cloud, DevOps & FullStack</p>
+      </div>
+      <div class="card p-5 text-center">
+        <p class="text-2xl md:text-3xl font-bold text-indigo">Virtual Labs</p>
+        <p class="text-[12.5px] text-muted mt-1 font-medium">Simulated Cloud Workstations</p>
+      </div>
+      <div class="card p-5 text-center">
+        <p class="text-2xl md:text-3xl font-bold text-soxit">Industry Co-op</p>
+        <p class="text-[12.5px] text-muted mt-1 font-medium">Direct SOXIT Mentorship</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-xl py-12">
+    ${sectionHeader('Core Offerings','All SOXIT Academia & AI Forge Tracks','Select a specialized track to view curriculum, prerequisites, practical project outcomes, and enroll directly.')}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      ${DATA.soxitAcademia.map(soxitAcademiaCard).join('')}
+    </div>
+  </section>
+
+  <section class="container-xl py-12">
+    <div class="card p-8 md:p-10 border border-borderc dark:border-white/10">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="chip bg-[#FFF0F0] text-[#FF6B6B] mb-3">iSkill Methodology</span>
+          <h2 class="text-[26px] md:text-[32px] font-bold text-navy dark:text-white mb-4">How iSkill Virtual Labs Work</h2>
+          <p class="text-muted leading-relaxed mb-6">Traditional learning teaches concepts in theory; iSkill immerses engineers in simulated enterprise repositories, CI/CD pipelines, and active LLM fine-tuning workstations from Day 1.</p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-[#FFF0F0] text-[#FF6B6B] flex items-center justify-center shrink-0 mt-0.5">${icon('terminal','w-4 h-4')}</div>
+              <div><p class="font-semibold text-[15px] text-navy dark:text-white">Cloud IDE & Simulated Repos</p><p class="text-[13px] text-muted">Pre-configured browser environments with zero installation roadblocks.</p></div>
+            </div>
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo flex items-center justify-center shrink-0 mt-0.5">${icon('git-pull-request','w-4 h-4')}</div>
+              <div><p class="font-semibold text-[15px] text-navy dark:text-white">Enterprise Code Reviews</p><p class="text-[13px] text-muted">Weekly PR reviews and architectural guidance from senior SOXIT engineers.</p></div>
+            </div>
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-[#E6FAF4] text-teal flex items-center justify-center shrink-0 mt-0.5">${icon('briefcase','w-4 h-4')}</div>
+              <div><p class="font-semibold text-[15px] text-navy dark:text-white">Placement & Interview Sprints</p><p class="text-[13px] text-muted">Live whiteboard architecture interviews, system design simulations, and portfolio showcases.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-navy rounded-2xl p-6 text-white space-y-4">
+          <div class="flex items-center justify-between border-b border-white/10 pb-3">
+            <span class="text-[13px] text-white/70 font-mono">iSkill Lab Architecture</span>
+            <span class="chip bg-teal/20 text-teal text-[11px]">Active Node</span>
+          </div>
+          <div class="space-y-2.5 font-mono text-[13px]">
+            <div class="bg-white/5 p-3 rounded-lg flex items-center justify-between"><span class="text-white/80">01. Virtual Sandbox Provisioning</span><span class="text-[#FF6B6B]">Ready</span></div>
+            <div class="bg-white/5 p-3 rounded-lg flex items-center justify-between"><span class="text-white/80">02. Live AI / ML Inference Pipelines</span><span class="text-teal">Active</span></div>
+            <div class="bg-white/5 p-3 rounded-lg flex items-center justify-between"><span class="text-white/80">03. Automated Evaluation & Linting</span><span class="text-indigo">Verified</span></div>
+            <div class="bg-white/5 p-3 rounded-lg flex items-center justify-between"><span class="text-white/80">04. Mentor Office Hours</span><span class="text-white/60">Weekly</span></div>
+          </div>
+          <a href="#/enroll" class="btn btn-primary w-full justify-center bg-[#FF6B6B] hover:bg-[#FF5252] border-none text-white mt-4">Enroll in Next Cohort</a>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: SOXIT ACADEMIA DETAIL ============ */
+function pageSoxitAcademiaDetail(slug){
+  const a = DATA.soxitAcademia.find(x=>x.slug===slug) || DATA.soxitAcademia[0];
+  return `
+  <section class="container-xl py-10">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'SOXIT Academia',href:'#/soxit-academia'},{label:a.title}])}
+    <div class="grid lg:grid-cols-[1fr_360px] gap-10 mt-6">
+      <div>
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="chip bg-[#FFF0F0] text-[#FF6B6B]">${a.category}</span>
+          <span class="chip bg-slate-100 dark:bg-white/10 text-muted">${a.level}</span>
+        </div>
+        <h1 class="text-[30px] md:text-[38px] font-bold text-navy dark:text-white mb-3">${a.title}</h1>
+        <p class="text-muted text-[16px] mb-8 leading-relaxed">${a.desc}</p>
+        
+        <div class="flex flex-wrap gap-5 text-[13.5px] text-muted mb-10 pb-6 border-b border-borderc dark:border-white/10">
+          <span class="flex items-center gap-1.5">${icon('clock','w-4 h-4 text-[#FF6B6B]')}${a.duration}</span>
+          <span class="flex items-center gap-1.5">${icon('monitor','w-4 h-4 text-indigo')}Online & Lab Simulation</span>
+          <span class="flex items-center gap-1.5">${icon('award','w-4 h-4 text-teal')}Verified SOXIT Credential</span>
+        </div>
+
+        <div class="mb-8">
+          <h2 class="font-semibold text-[19px] text-navy dark:text-white mb-3">Curriculum Modules</h2>
+          <div class="space-y-3">
+            ${a.curriculum.map((c,i)=>`
+              <div class="card p-4 flex items-center gap-3.5">
+                <div class="w-8 h-8 rounded-lg bg-[#FFF0F0] text-[#FF6B6B] flex items-center justify-center font-bold text-[13px] shrink-0">${i+1}</div>
+                <p class="font-medium text-[14.5px] text-navy dark:text-white">${c}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <h2 class="font-semibold text-[19px] text-navy dark:text-white mb-3">Applied Project Deliverables</h2>
+          <div class="card p-5 space-y-3">
+            <p class="text-[14px] text-muted leading-relaxed">Engineers in this track develop production-grade deliverables, code artifacts, and deploy live solutions directly to cloud infrastructure.</p>
+            <ul class="space-y-2 text-[13.5px] text-navy dark:text-white">
+              <li class="flex items-center gap-2">${icon('check-circle','w-4 h-4 text-teal')} Production-tested Git repository with automated testing</li>
+              <li class="flex items-center gap-2">${icon('check-circle','w-4 h-4 text-teal')} Verified architectural documentation & system design diagram</li>
+              <li class="flex items-center gap-2">${icon('check-circle','w-4 h-4 text-teal')} Live deployed cloud project or AI model instance</li>
+              <li class="flex items-center gap-2">${icon('check-circle','w-4 h-4 text-teal')} Official SOXIT Academia Certificate of Completion & Transcript</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <aside class="h-fit lg:sticky lg:top-24 card p-6">
+        <div class="w-14 h-14 rounded-xl bg-[#FFF0F0] text-[#FF6B6B] flex items-center justify-center mb-5">${icon(a.icon,'w-7 h-7')}</div>
+        <p class="font-semibold text-[18px] text-navy dark:text-white mb-1">${a.title}</p>
+        <p class="text-[13px] text-muted mb-6">${a.category} · ${a.level}</p>
+        
+        <a href="#/enroll?track=${a.slug}" class="btn btn-primary w-full justify-center bg-[#FF6B6B] hover:bg-[#FF5252] border-none text-white mb-3">Enroll in Track →</a>
+        <a href="#/soxit/consult" class="btn btn-secondary w-full justify-center mb-4 text-[13px]">Request Corporate Cohort</a>
+        
+        <div class="border-t border-borderc dark:border-white/10 pt-4 space-y-3 text-[13.5px] text-muted">
+          <div class="flex justify-between"><span>Duration</span><span class="font-medium text-navy dark:text-white">${a.duration}</span></div>
+          <div class="flex justify-between"><span>Skill Level</span><span class="font-medium text-navy dark:text-white">${a.level}</span></div>
+          <div class="flex justify-between"><span>Format</span><span class="font-medium text-navy dark:text-white">Lab & Mentor Led</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>`;
+}
+
+/* ============ PAGE: IN-PLATFORM MANUSCRIPT SUBMISSION ============ */
+function pageSubmit(){
+  const urlParams = new URLSearchParams(location.hash.split('?')[1]||'');
+  const preJournal = urlParams.get('journal') || '';
+  return `
+  <section class="container-xl py-12 max-w-3xl">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'Journals',href:'#/journals'},{label:'Manuscript Submission'}])}
+    <div class="mt-6 mb-8">
+      <span class="chip bg-[#E6FAF4] text-teal mb-2">SCHOLARLY SUBMISSION PORTAL</span>
+      <h1 class="text-[32px] font-bold text-navy dark:text-white">Submit Research Manuscript</h1>
+      <p class="text-muted mt-2">Submit your manuscript directly to any of our 8 peer-reviewed open-access journals. All submissions undergo double-blind peer review.</p>
+    </div>
+
+    <div id="submitContainer" class="card p-8">
+      <form id="manuscriptForm" onsubmit="handleManuscriptSubmit(event)" class="space-y-6">
+        <div>
+          <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Target Academic Journal <span class="text-red-500">*</span></label>
+          <select required id="subJournal" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring">
+            <option value="">-- Select Target Journal --</option>
+            ${DATA.journals.map(j=>`<option value="${j.slug}" ${j.slug===preJournal?'selected':''}>${j.title} (${j.issn})</option>`).join('')}
+          </select>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Corresponding Author Name <span class="text-red-500">*</span></label>
+            <input required id="subAuthor" type="text" placeholder="Dr. Jane Smith" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Author Email Address <span class="text-red-500">*</span></label>
+            <input required id="subEmail" type="email" placeholder="author@university.edu" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Affiliation / Institution <span class="text-red-500">*</span></label>
+            <input required id="subAffiliation" type="text" placeholder="Department of Psychology, University..." class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">ORCID ID (Optional)</label>
+            <input id="subOrcid" type="text" placeholder="0000-0000-0000-0000" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring font-mono"/>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Manuscript Title <span class="text-red-500">*</span></label>
+          <input required id="subTitle" type="text" placeholder="Full title of the research paper" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Structured Abstract <span class="text-red-500">*</span></label>
+          <textarea required id="subAbstract" rows="5" placeholder="Include Background, Methods, Results, and Conclusion (max 300 words)..." class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Keywords (Comma separated) <span class="text-red-500">*</span></label>
+          <input required id="subKeywords" type="text" placeholder="Psychometrics, Clinical Psychology, Factor Analysis" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+        </div>
+
+        <div class="p-4 rounded-xl border border-dashed border-borderc dark:border-white/20 text-center bg-bg dark:bg-[#1A1E3D]">
+          <div class="w-10 h-10 rounded-full bg-indigo-50 text-indigo mx-auto flex items-center justify-center mb-2">${icon('upload-cloud','w-5 h-5')}</div>
+          <p class="font-medium text-[14px] text-navy dark:text-white">Upload Manuscript File (DOCX or PDF)</p>
+          <p class="text-[12px] text-muted mb-3">Ensure author identities are removed for blind review</p>
+          <input required id="subFile" type="file" accept=".pdf,.doc,.docx" class="text-[13px] text-muted mx-auto"/>
+        </div>
+
+        <div class="space-y-2 pt-2 border-t border-borderc dark:border-white/10">
+          <label class="flex items-start gap-2.5 text-[13px] text-muted cursor-pointer">
+            <input required type="checkbox" class="mt-1 rounded text-indigo"/>
+            <span>I confirm that this manuscript represents original work, has not been published elsewhere, and aligns with COPE publication ethics guidelines.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full justify-center py-3 text-[15px]">Submit Manuscript to Editorial Board</button>
+      </form>
+    </div>
+  </section>`;
+}
+
+function handleManuscriptSubmit(e){
+  e.preventDefault();
+  const jSlug = document.getElementById('subJournal').value;
+  const journal = DATA.journals.find(x=>x.slug===jSlug) || DATA.journals[0];
+  const author = document.getElementById('subAuthor').value;
+  const title = document.getElementById('subTitle').value;
+  const subId = 'WAU-' + Math.floor(100000 + Math.random() * 900000);
+  
+  const container = document.getElementById('submitContainer');
+  if(!container) return;
+  
+  container.innerHTML = `
+    <div class="text-center py-8">
+      <div class="w-16 h-16 rounded-full bg-[#E6FAF4] text-teal mx-auto flex items-center justify-center mb-4">${icon('check-circle','w-8 h-8')}</div>
+      <span class="chip bg-[#E6FAF4] text-teal mb-2">SUBMISSION RECEIVED</span>
+      <h2 class="text-[24px] font-bold text-navy dark:text-white mb-2">Manuscript Successfully Logged</h2>
+      <p class="text-[14.5px] text-muted max-w-md mx-auto mb-6">Thank you, <strong>${author}</strong>. Your manuscript “${title}” has been queued for editorial screening in <strong>${journal.title}</strong>.</p>
+      
+      <div class="card bg-bg dark:bg-[#161A38] p-5 max-w-md mx-auto text-left text-[13.5px] space-y-2 mb-8">
+        <div class="flex justify-between"><span>Tracking ID</span><span class="font-mono font-bold text-navy dark:text-white">${subId}</span></div>
+        <div class="flex justify-between"><span>Target Journal</span><span class="font-semibold text-navy dark:text-white">${journal.title}</span></div>
+        <div class="flex justify-between"><span>Review Process</span><span class="text-teal font-medium">Double-Blind Peer Review</span></div>
+        <div class="flex justify-between"><span>Expected Turnaround</span><span class="text-muted">4 - 6 Weeks</span></div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="#/journals" class="btn btn-primary">Browse Journals</a>
+        <a href="#/" class="btn btn-secondary">Return to Home</a>
+      </div>
+    </div>
+  `;
+  lucide.createIcons();
+}
+
+/* ============ PAGE: IN-PLATFORM ENROLLMENT ============ */
+function pageEnroll(){
+  const urlParams = new URLSearchParams(location.hash.split('?')[1]||'');
+  const preTrack = urlParams.get('track') || '';
+  const preCourse = urlParams.get('course') || '';
+  
+  return `
+  <section class="container-xl py-12 max-w-3xl">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'Academy & Forge',href:'#/academy'},{label:'Enrollment'}])}
+    <div class="mt-6 mb-8">
+      <span class="chip bg-indigo-50 text-indigo mb-2">UNIFIED ENROLLMENT</span>
+      <h1 class="text-[32px] font-bold text-navy dark:text-white">Program & Track Registration</h1>
+      <p class="text-muted mt-2">Enroll in verified WeAvecU behavioral science certifications or SOXIT Academia & AI Forge technical tracks.</p>
+    </div>
+
+    <div id="enrollContainer" class="card p-8">
+      <form id="enrollForm" onsubmit="handleEnrollSubmit(event)" class="space-y-6">
+        <div>
+          <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Select Program or Track <span class="text-red-500">*</span></label>
+          <select required id="enrProgram" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring">
+            <optgroup label="SOXIT Academia & AI Forge (Tech Tracks)">
+              ${DATA.soxitAcademia.map(a=>`<option value="tech:${a.slug}" ${a.slug===preTrack?'selected':''}>${a.title} (${a.duration})</option>`).join('')}
+            </optgroup>
+            <optgroup label="WeAvecU Academy (Psychology & Research)">
+              ${DATA.programs.map(p=>`<option value="acad:${p.slug}" ${p.slug===preCourse?'selected':''}>${p.title} (${p.duration})</option>`).join('')}
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Full Name <span class="text-red-500">*</span></label>
+            <input required id="enrName" type="text" placeholder="Your full name" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Email Address <span class="text-red-500">*</span></label>
+            <input required id="enrEmail" type="email" placeholder="name@example.com" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Phone / WhatsApp <span class="text-red-500">*</span></label>
+            <input required id="enrPhone" type="tel" placeholder="+91 98765 43210" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Preferred Cohort Start</label>
+            <select id="enrCohort" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring">
+              <option value="Immediate">Immediate / Rolling Enrollment</option>
+              <option value="Next Month">Next Month Cohort</option>
+              <option value="Weekend Batch">Weekend Intensive Batch</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Academic / Professional Background</label>
+          <textarea id="enrNotes" rows="3" placeholder="Briefly describe your background, educational qualification, and learning objective..." class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full justify-center py-3 text-[15px]">Confirm Enrollment Application</button>
+      </form>
+    </div>
+  </section>`;
+}
+
+function handleEnrollSubmit(e){
+  e.preventDefault();
+  const progVal = document.getElementById('enrProgram').value;
+  const name = document.getElementById('enrName').value;
+  const cohort = document.getElementById('enrCohort').value;
+  const enrId = 'ENR-' + Math.floor(100000 + Math.random() * 900000);
+  
+  const container = document.getElementById('enrollContainer');
+  if(!container) return;
+  
+  container.innerHTML = `
+    <div class="text-center py-8">
+      <div class="w-16 h-16 rounded-full bg-indigo-50 text-indigo mx-auto flex items-center justify-center mb-4">${icon('check-circle','w-8 h-8')}</div>
+      <span class="chip bg-indigo-50 text-indigo mb-2">APPLICATION CONFIRMED</span>
+      <h2 class="text-[24px] font-bold text-navy dark:text-white mb-2">Enrollment Registration Received</h2>
+      <p class="text-[14.5px] text-muted max-w-md mx-auto mb-6">Welcome, <strong>${name}</strong>. Your cohort registration has been confirmed. An academic advisor will reach out with lab setup instructions and onboarding materials.</p>
+      
+      <div class="card bg-bg dark:bg-[#161A38] p-5 max-w-md mx-auto text-left text-[13.5px] space-y-2 mb-8">
+        <div class="flex justify-between"><span>Enrollment ID</span><span class="font-mono font-bold text-navy dark:text-white">${enrId}</span></div>
+        <div class="flex justify-between"><span>Cohort Batch</span><span class="font-semibold text-navy dark:text-white">${cohort}</span></div>
+        <div class="flex justify-between"><span>Orientation Portal</span><span class="text-indigo font-medium">Virtual Classroom Active</span></div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="#/soxit-academia" class="btn btn-primary">Explore AI Forge</a>
+        <a href="#/" class="btn btn-secondary">Return to Home</a>
+      </div>
+    </div>
+  `;
+  lucide.createIcons();
+}
+
+/* ============ PAGE: SOXIT CONSULTATION SCHEDULER ============ */
+function pageSoxitConsult(){
+  const urlParams = new URLSearchParams(location.hash.split('?')[1]||'');
+  const preService = urlParams.get('service') || '';
+  return `
+  <section class="container-xl py-12 max-w-3xl">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'SOXIT Consulting',href:'#/soxit'},{label:'Technology Consultation'}])}
+    <div class="mt-6 mb-8">
+      <span class="chip bg-[#FFF3E4] text-soxit mb-2">SOXIT ENTERPRISE ADVISORY</span>
+      <h1 class="text-[32px] font-bold text-navy dark:text-white">Schedule IT & Software Consultation</h1>
+      <p class="text-muted mt-2">Engage directly with SOXIT senior software architects for bespoke software development, cloud infrastructure, AI enablement, or cybersecurity audit.</p>
+    </div>
+
+    <div id="consultContainer" class="card p-8">
+      <form onsubmit="handleConsultSubmit(event)" class="space-y-6">
+        <div>
+          <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Service Area <span class="text-red-500">*</span></label>
+          <select required id="conService" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring">
+            <option value="">-- Select Technology Vertical --</option>
+            ${DATA.soxitServices.map(s=>`<option value="${s.slug}" ${s.slug===preService?'selected':''}>${s.title}</option>`).join('')}
+          </select>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Your Name <span class="text-red-500">*</span></label>
+            <input required id="conName" type="text" placeholder="Full name" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Organization / Enterprise <span class="text-red-500">*</span></label>
+            <input required id="conOrg" type="text" placeholder="Company or Institution name" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Work Email <span class="text-red-500">*</span></label>
+            <input required id="conEmail" type="email" placeholder="work@company.com" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Estimated Project Timeline</label>
+            <select id="conTimeline" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring">
+              <option value="Immediate (< 1 Month)">Immediate (Under 1 Month)</option>
+              <option value="1 - 3 Months">1 - 3 Months</option>
+              <option value="Quarterly / Long-Term">Quarterly / Long-Term</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Project Brief & Requirements <span class="text-red-500">*</span></label>
+          <textarea required id="conBrief" rows="4" placeholder="Briefly outline your technology objectives, existing tech stack, or engineering challenges..." class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-soxit w-full justify-center py-3 text-[15px]">Request Architectural Discovery Session</button>
+      </form>
+    </div>
+  </section>`;
+}
+
+function handleConsultSubmit(e){
+  e.preventDefault();
+  const name = document.getElementById('conName').value;
+  const org = document.getElementById('conOrg').value;
+  const sSlug = document.getElementById('conService').value;
+  const service = DATA.soxitServices.find(x=>x.slug===sSlug) || DATA.soxitServices[0];
+  const consultId = 'SOX-' + Math.floor(100000 + Math.random() * 900000);
+  
+  const container = document.getElementById('consultContainer');
+  if(!container) return;
+  
+  container.innerHTML = `
+    <div class="text-center py-8">
+      <div class="w-16 h-16 rounded-full bg-[#FFF3E4] text-soxit mx-auto flex items-center justify-center mb-4">${icon('check-circle','w-8 h-8')}</div>
+      <span class="chip bg-[#FFF3E4] text-soxit mb-2">CONSULTATION LOGGED</span>
+      <h2 class="text-[24px] font-bold text-navy dark:text-white mb-2">Discovery Session Scheduled</h2>
+      <p class="text-[14.5px] text-muted max-w-md mx-auto mb-6">Thank you, <strong>${name}</strong> (${org}). A SOXIT lead solutions architect for <strong>${service.title}</strong> will review your specifications and reach out within 24 business hours.</p>
+      
+      <div class="card bg-bg dark:bg-[#161A38] p-5 max-w-md mx-auto text-left text-[13.5px] space-y-2 mb-8">
+        <div class="flex justify-between"><span>Reference ID</span><span class="font-mono font-bold text-navy dark:text-white">${consultId}</span></div>
+        <div class="flex justify-between"><span>Consulting Domain</span><span class="font-semibold text-navy dark:text-white">${service.title}</span></div>
+        <div class="flex justify-between"><span>Next Step</span><span class="text-soxit font-medium">Architectural Discovery Call</span></div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="#/soxit/services" class="btn btn-soxit">Explore All SOXIT Services</a>
+        <a href="#/" class="btn btn-secondary">Return to Home</a>
+      </div>
+    </div>
+  `;
+  lucide.createIcons();
+}
+
+/* ============ PAGE: MENTAL HEALTH BOOKING ============ */
+function pageHealthBook(){
+  const urlParams = new URLSearchParams(location.hash.split('?')[1]||'');
+  const preService = urlParams.get('service') || '';
+  return `
+  <section class="container-xl py-12 max-w-3xl">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:'Mental Health',href:'#/health'},{label:'Book Care / Training'}])}
+    <div class="mt-6 mb-8">
+      <span class="chip bg-[#E6FAF4] text-teal mb-2">WEAVECU MENTAL HEALTH CARE</span>
+      <h1 class="text-[32px] font-bold text-navy dark:text-white">Book Psychological Care & Training</h1>
+      <p class="text-muted mt-2">Connect with licensed practitioners for individual counselling, expressive art therapy, supervision, or clinical internship placement.</p>
+    </div>
+
+    <div id="careContainer" class="card p-8">
+      <form onsubmit="handleCareSubmit(event)" class="space-y-6">
+        <div>
+          <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Select Service / Care Modality <span class="text-red-500">*</span></label>
+          <select required id="careService" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring">
+            <option value="">-- Select Modality --</option>
+            ${DATA.mentalHealthServices.map(s=>`<option value="${s.slug}" ${s.slug===preService?'selected':''}>${s.title}</option>`).join('')}
+          </select>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Your Name <span class="text-red-500">*</span></label>
+            <input required id="careName" type="text" placeholder="Full name" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Email Address <span class="text-red-500">*</span></label>
+            <input required id="careEmail" type="email" placeholder="name@example.com" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Phone / Contact <span class="text-red-500">*</span></label>
+            <input required id="carePhone" type="tel" placeholder="+91 98765 43210" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"/>
+          </div>
+          <div>
+            <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Preferred Session Format</label>
+            <select id="careFormat" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring">
+              <option value="Online Video Session">Online Video Consultation</option>
+              <option value="In-Person Clinical Facility">In-Person Clinical Facility</option>
+              <option value="Group Workshop">Group Workshop / Supervision</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-[14px] text-navy dark:text-white mb-2">Message or Care Inquiry</label>
+          <textarea id="careMsg" rows="3" placeholder="Share any specific requirements or areas you wish to address (strictly confidential)..." class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3.5 py-2.5 text-[14px] text-navy dark:text-white focus-ring"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-full justify-center py-3 text-[15px]">Confirm Confidential Appointment Request</button>
+      </form>
+    </div>
+  </section>`;
+}
+
+function handleCareSubmit(e){
+  e.preventDefault();
+  const name = document.getElementById('careName').value;
+  const sSlug = document.getElementById('careService').value;
+  const service = DATA.mentalHealthServices.find(x=>x.slug===sSlug) || DATA.mentalHealthServices[0];
+  const refId = 'CARE-' + Math.floor(100000 + Math.random() * 900000);
+  
+  const container = document.getElementById('careContainer');
+  if(!container) return;
+  
+  container.innerHTML = `
+    <div class="text-center py-8">
+      <div class="w-16 h-16 rounded-full bg-[#E6FAF4] text-teal mx-auto flex items-center justify-center mb-4">${icon('heart-handshake','w-8 h-8')}</div>
+      <span class="chip bg-[#E6FAF4] text-teal mb-2">APPOINTMENT RECEIVED</span>
+      <h2 class="text-[24px] font-bold text-navy dark:text-white mb-2">Care Request Logged Confidentially</h2>
+      <p class="text-[14.5px] text-muted max-w-md mx-auto mb-6">Thank you, <strong>${name}</strong>. Your consultation request for <strong>${service.title}</strong> has been received by our clinical care coordinator.</p>
+      
+      <div class="card bg-bg dark:bg-[#161A38] p-5 max-w-md mx-auto text-left text-[13.5px] space-y-2 mb-8">
+        <div class="flex justify-between"><span>Care Reference</span><span class="font-mono font-bold text-navy dark:text-white">${refId}</span></div>
+        <div class="flex justify-between"><span>Care Service</span><span class="font-semibold text-navy dark:text-white">${service.title}</span></div>
+        <div class="flex justify-between"><span>Privacy Standard</span><span class="text-teal font-medium">100% Confidential</span></div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="#/health" class="btn btn-primary">Mental Health Hub</a>
+        <a href="#/" class="btn btn-secondary">Return to Home</a>
+      </div>
+    </div>
+  `;
+  lucide.createIcons();
+}
+
+function handleSearch(query){
+  const q = (query||'').toLowerCase().trim();
+  const sr = document.getElementById('searchResults');
+  if(!sr) return;
+  if(!q){
+    sr.innerHTML = `
+      <div><h2 class="font-semibold text-[18px] text-navy dark:text-white mb-4">Academic Journals (${DATA.journals.length})</h2><div class="grid md:grid-cols-2 gap-5">${DATA.journals.map(journalCard).join('')}</div></div>
+      <div class="mt-8"><h2 class="font-semibold text-[18px] text-navy dark:text-white mb-4">SOXIT Academia & AI Forge (${DATA.soxitAcademia.length})</h2><div class="grid md:grid-cols-3 gap-5">${DATA.soxitAcademia.map(soxitAcademiaCard).join('')}</div></div>
+      <div class="mt-8"><h2 class="font-semibold text-[18px] text-navy dark:text-white mb-4">Programs & Training (${DATA.programs.length})</h2><div class="grid md:grid-cols-3 gap-5">${DATA.programs.map(programCard).join('')}</div></div>`;
+    lucide.createIcons();
+    return;
+  }
+  const matchedJournals = DATA.journals.filter(j=>j.title.toLowerCase().includes(q) || j.issn.toLowerCase().includes(q) || j.subject.toLowerCase().includes(q));
+  const matchedAcademia = DATA.soxitAcademia.filter(a=>a.title.toLowerCase().includes(q) || a.desc.toLowerCase().includes(q) || a.category.toLowerCase().includes(q));
+  const matchedPrograms = DATA.programs.filter(p=>p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
+  const matchedSoxit = DATA.soxitServices.filter(s=>s.title.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q));
+  
+  sr.innerHTML = `
+    <p class="text-[13.5px] text-muted mb-6">Found ${matchedJournals.length + matchedAcademia.length + matchedPrograms.length + matchedSoxit.length} results matching “${query}”</p>
+    ${matchedJournals.length?`<div class="mb-8"><h3 class="font-semibold text-[17px] text-navy dark:text-white mb-4">Academic Journals</h3><div class="grid md:grid-cols-2 gap-5">${matchedJournals.map(journalCard).join('')}</div></div>`:''}
+    ${matchedAcademia.length?`<div class="mb-8"><h3 class="font-semibold text-[17px] text-navy dark:text-white mb-4">SOXIT Academia & AI Forge</h3><div class="grid md:grid-cols-3 gap-5">${matchedAcademia.map(soxitAcademiaCard).join('')}</div></div>`:''}
+    ${matchedPrograms.length?`<div class="mb-8"><h3 class="font-semibold text-[17px] text-navy dark:text-white mb-4">Programs</h3><div class="grid md:grid-cols-3 gap-5">${matchedPrograms.map(programCard).join('')}</div></div>`:''}
+    ${matchedSoxit.length?`<div class="mb-8"><h3 class="font-semibold text-[17px] text-navy dark:text-white mb-4">SOXIT Services</h3><div class="grid md:grid-cols-3 gap-5">${matchedSoxit.map(soxitCard).join('')}</div></div>`:''}
+    ${!matchedJournals.length && !matchedAcademia.length && !matchedPrograms.length && !matchedSoxit.length ? '<p class="text-muted">No items matched your search.</p>' : ''}
+  `;
+  lucide.createIcons();
+}
+
+function pageSimple(title, items, cta){
+  return `<section class="container-xl py-14 max-w-3xl">
+    ${breadcrumb([{label:'Home',href:'#/'},{label:title}])}
+    <h1 class="text-[32px] font-bold mt-4 mb-4 text-navy dark:text-white">${title}</h1>
+    <div class="grid sm:grid-cols-2 gap-4 mb-8">
+      ${items.map(([ic,t,d])=>`<div class="card p-5"><div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo flex items-center justify-center mb-3">${icon(ic,'w-5 h-5')}</div><p class="font-semibold text-[14.5px] text-navy dark:text-white mb-1">${t}</p><p class="text-[13px] text-muted">${d}</p></div>`).join('')}
+    </div>
+    ${cta?`<a href="${cta[1]}" class="btn btn-primary">${cta[0]}</a>`:''}
+  </section>`;
+}
+function pageAuth(mode){
+  return `<section class="container-xl py-16 max-w-md">
+    <div class="card p-8">
+      <h1 class="text-[24px] font-bold mb-1 text-navy dark:text-white">${mode==='login'?'Account Login':'Join WeAvecU & SOXIT'}</h1>
+      <p class="text-[13.5px] text-muted mb-6">${mode==='login'?'Access your author, learner or subscriber portal.':'Create an account on the unified ecosystem.'}</p>
+      <form class="space-y-4" onsubmit="event.preventDefault(); alert('Authentication portal.');">
+        ${mode==='signup'?`<input required placeholder="Full Name" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3 py-2.5 text-[14px] focus-ring"/>`:''}
+        <input required type="email" placeholder="Email Address" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3 py-2.5 text-[14px] focus-ring"/>
+        <input required type="password" placeholder="Password" class="w-full rounded-lg bg-bg dark:bg-[#1E2347] border border-borderc dark:border-white/10 px-3 py-2.5 text-[14px] focus-ring"/>
+        <button class="btn btn-primary w-full justify-center">${mode==='login'?'Log In':'Create Account'}</button>
+      </form>
+    </div>
+  </section>`;
+}
+</script>
+<script>
+/* ============ ROUTER ============ */
+const ROUTES = [
+  [/^\/$/, ()=>pageHome()],
+  [/^\/about$/, ()=>pageAbout()],
+  [/^\/academy$/, ()=>pageAcademy()],
+  [/^\/academy\/courses$/, ()=>pageCourses()],
+  [/^\/academy\/courses\/([^/]+)$/, (m)=>pageCourseDetail(m[1])],
+  [/^\/academy\/learning-paths$/, ()=>pageSimple('Learning Paths', DATA.learningPaths.map(p=>['layers',p.title,p.level]), null)],
+  [/^\/academy\/learning-paths\/([^/]+)$/, (m)=>pageLearningPath(m[1])],
+  [/^\/academy\/certificates$/, ()=>pageSimple('Certificates',[['award','Course Certifications','Awarded upon completion of training programs.'],['award','Internship Completion','Awarded on completing practical case modules.']])],
+  [/^\/academy\/corporate$/, ()=>pageSimple('Corporate Learning',[['building-2','Corporate Wellness Workshops','Mental health resilience and workplace wellbeing.'],['users','Team Training','Custom applied psychology programs.']],['Contact Us','#/about#contact'])],
+  [/^\/soxit-academia$/, ()=>pageSoxitAcademia()],
+  [/^\/soxit-academia\/([^/]+)$/, (m)=>pageSoxitAcademiaDetail(m[1])],
+  [/^\/health$/, ()=>pageHealth()],
+  [/^\/health\/book$/, ()=>pageHealthBook()],
+  [/^\/journals$/, ()=>pageJournals()],
+  [/^\/journals\/([^/]+)$/, (m)=>pageJournalDetail(m[1])],
+  [/^\/submit$/, ()=>pageSubmit()],
+  [/^\/enroll$/, ()=>pageEnroll()],
+  [/^\/research$/, ()=>pageJournals()],
+  [/^\/conferences$/, ()=>pageConferences()],
+  [/^\/conferences\/([^/]+)$/, ()=>pageConferences()],
+  [/^\/soxit$/, ()=>pageSoxit()],
+  [/^\/soxit\/services$/, ()=>pageSoxitServices()],
+  [/^\/soxit\/services\/([^/]+)$/, (m)=>pageSoxitServiceDetail(m[1])],
+  [/^\/soxit\/consult$/, ()=>pageSoxitConsult()],
+  [/^\/community$/, ()=>pageCommunity()],
+  [/^\/authors$/, ()=>pageSimple('Author Center',[['upload','Manuscript Submission','Submit papers across any of our 8 academic journals.'],['book-marked','Author Guidelines','Formatting, referencing and submission checklists.'],['shield-check','Publication Ethics','COPE-aligned ethics, originality, and authorship policies.']],['Submit Manuscript','#/submit'])],
+  [/^\/for-authors$/, ()=>pageSimple('For Authors',[['upload','Manuscript Guidelines','Guidelines for submitting research.'],['shield-check','Ethics & Peer Review','Double-blind peer review policies.']],['Submit Manuscript','#/submit'])],
+  [/^\/for-reviewers$/, ()=>pageSimple('For Reviewers',[['eye','Peer Review Guidelines','Double-blind evaluation criteria.'],['award','Reviewer Acknowledgement','Recognition for peer review contributions.']])],
+  [/^\/for-editors$/, ()=>pageSimple('For Editors',[['book-open','Editorial Board','Editorial governance and ethics.']])],
+  [/^\/for-partners$/, ()=>pageSimple('Partner With Us',[['handshake','Institutional Collaboration','Joint research and technology ventures.'],['globe','Academic Networking','Co-organizing symposiums and publications.']],['Contact Team','#/about#contact'])],
+  [/^\/search$/, ()=>pageSearch()],
+  [/^\/login$/, ()=>pageAuth('login')],
+  [/^\/signup$/, ()=>pageAuth('signup')]
+];
+function page404(){
+  return `<section class="container-xl py-24 text-center">
+    <h1 class="text-[28px] font-bold text-navy dark:text-white mb-3">Page Not Found</h1>
+    <p class="text-muted mb-6">The requested section was not found.</p>
+    <a href="#/" class="btn btn-primary">Back to Home</a>
+  </section>`;
+}
+function resolvePath(){
+  let p = location.hash.replace('#','') || '/';
+  p = p.split('#')[0];
+  if(p.length>1 && p.endsWith('/')) p = p.slice(0,-1);
+  return p || '/';
+}
+function render(){
+  const path = resolvePath();
+  document.getElementById('utilitybar').innerHTML='';
+  document.getElementById('site-header').innerHTML = renderHeader();
+  document.getElementById('site-footer').innerHTML = renderFooter();
+  let html = null;
+  for(const [re, fn] of ROUTES){
+    const m = path.match(re);
+    if(m){ html = fn(m); break; }
+  }
+  document.getElementById('app').innerHTML = html || page404();
+  window.scrollTo({top:0,behavior:'instant'});
+  lucide.createIcons();
+  bindHeaderEvents();
+}
+function bindHeaderEvents(){
+  const dt = document.getElementById('darkToggle');
+  if(dt) dt.onclick = ()=>{
+    window.STATE.dark = !window.STATE.dark;
+    document.documentElement.classList.toggle('dark', window.STATE.dark);
+    const dl = document.getElementById('darkLabel');
+    if(dl) dl.textContent = window.STATE.dark ? 'Light' : 'Dark';
+  };
+  const mb = document.getElementById('mobileNavBtn');
+  const mn = document.getElementById('mobileNav');
+  if(mb && mn) mb.onclick = ()=> mn.classList.toggle('hidden');
+  document.querySelectorAll('.mobile-acc-btn').forEach(btn=>{
+    btn.onclick = ()=>{
+      const panel = document.querySelector(`.mobile-acc-panel[data-panel="${btn.dataset.acc}"]`);
+      const chev = btn.querySelector('[data-lucide]');
+      if(panel) panel.classList.toggle('hidden');
+      if(chev) chev.classList.toggle('rotate-180');
+    };
+  });
+}
+window.addEventListener('hashchange', render);
+window.addEventListener('DOMContentLoaded', render);
+</script>
+</body>
+</html>

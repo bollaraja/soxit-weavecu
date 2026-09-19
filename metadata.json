@@ -1,0 +1,6 @@
+{
+  "name": "WeAvecU | Journals, Research, Learning, Mental Health & Technology",
+  "description": "One unified ecosystem for academic journals, psychological research, professional learning, mental health & wellbeing, and SOXIT technology consulting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
